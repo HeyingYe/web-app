@@ -37,6 +37,8 @@ module.exports = function(app){
 
 	app.get("/theatreDetail",function(req,res){
 		//影院详情
+		//解决mysql模块重新连接的问题（必需加，不然第二次连接数据库）
+		mysqlHandle.handleDisconnect(connection);
 		//连接mysql数据库
 		mysqlHandle.connect(connection);
 		//sql操作语句
@@ -44,9 +46,10 @@ module.exports = function(app){
 		//获取webapp数据库的theatreDetail表内容
 		var result = mysqlHandle.handle(connection,sql,function(result){
 			res.send(result);
+			// mysqlHandle.close(connection);
 		});
 		//关闭数据库连接
-		mysqlHandle.close(connection);
+		mysqlHandle.close(connection);		
 	})
 
 	app.get("/moveDetail",function(req,res){

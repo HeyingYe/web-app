@@ -30,10 +30,11 @@ theatreDetail.directive("foot",function(){
 	}
 })
 theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
-	console.log(baseUrl + "/theatreDetail")
+	// console.log(baseUrl + "/theatreDetail")
 	$http.get(baseUrl + "/theatreDetail").success(function(res){
 		console.log(res);
 		$scope.data = res;//存储数据
+		
 	})
 	
 }])

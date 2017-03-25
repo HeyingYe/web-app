@@ -19,6 +19,8 @@
   "homepage": "https://github.com/HeyingYe/web-app#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "easy-mysql": "^1.0.3",
+    "easymysql": "^0.2.7",
     "express": "^4.15.2",
     "mysql": "^2.13.0"
   }

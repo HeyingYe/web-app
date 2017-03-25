@@ -1,0 +1,23 @@
+//数据层，mysql模块
+module.exports = {
+	connect:function(connection){
+		//连接mysql数据库
+		connection.connect();
+	},
+	handle:function(connection,sql,callback){
+		connection.query(sql,function(err,result){
+			if(err){
+				console.log(err.message);
+				return;
+			}
+			console.log(result);
+			if(callback){
+				callback(result);
+			}
+		})
+	},
+	close:function(connection){
+		//关闭连接
+		connection.end();
+	}
+}

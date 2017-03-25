@@ -1,0 +1,281 @@
+html,body,.wrap{
+	background:#f0f0f0;
+	height: 100%;
+	width: 100%;	
+}
+top{
+	display: block;
+	margin-bottom: 10px;
+	background:#fff;
+}
+content{
+	display: block;
+	padding: 15px;
+	margin-bottom: 10px;
+	background:#fff;
+}
+foot{
+	display: block;
+	padding:15px;
+	background:#fff;
+}
+
+.top{
+	line-height: 45px;
+	background: #f0f0f0;
+	color:#333;
+	position:relative;
+	padding: 0 15px;
+}
+.top .back{
+	font-size: 16px;
+}
+.top .back{
+	color:#333;
+}
+.top .back span{
+	font-size:22px;
+	font-weight: 600;
+}
+.top .theatre{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	font-size:18px;
+	transform:translate(-50%,-50%);	
+}
+.theatre_intro{
+	padding:15px;
+	position:relative;
+}
+.theatre_intro .right{
+	font-size:24px;
+	position:absolute;
+	right: 15px;
+	top: 50%;
+	color:#ccc;
+	transform:translate(0,-50%);
+}
+.theatre_intro .star{
+	display:block;
+	height: 12px;
+	width: 75px;
+	margin:5px 0;
+	background:url(../img/icon/remark.png) no-repeat 0 -994px;
+}
+.theatre_intro .theatrename{
+	font-weight:100;
+	font-size:18px;
+}
+.theatre_intro p{
+	font-size:12px;
+}
+.seat{
+	display:inline-block;
+	background:#5eb22d;
+	padding:2px 3px;
+	margin-left: 2px;
+	color:#fff;
+	font-size:12px;
+	line-height:16px;
+	margin-right: 5px;
+}
+/**content**/
+.content .tit{
+	line-height:40px;
+	font-size:12px;
+}
+.content .sub{
+	color:#999;
+	line-height:40px;
+}
+.movie ul{
+	margin-bottom:20px;
+}
+.movie ul li{
+	float: left;
+	margin-right: 10px;
+}
+.movie ul:after{
+	content:"";
+	display:block;
+	clear: both;
+}
+.movie ul li img{
+	width: 58px;
+    height: 78px;
+}
+.movieTitle{
+	position:relative;
+}
+.movieTitle h3{
+	font-weight:100;
+	font-size:18px;
+}
+.movieTitle h3 .score{
+	color:#f63;
+	margin-left:10px;
+}
+.movieTitle p{
+	font-size:14px;
+	color:#999;
+}
+.movieDetail{
+	position:absolute;
+	right: 15px;
+	top: 50%;
+	transform:translate(0,-50%);
+	font-size:14px;
+	color:#000;
+}
+.warning:before{
+	content:"";
+	display:block;
+	clear:both;
+}
+.warning{
+	height: 40px;
+	background:#fefcf1;
+	line-height:40px;
+	color:#999;
+	font-size:12px;
+	border-top: 1px solid #edecea;
+    border-bottom: 1px solid #edecea;
+    margin-top: 5px;
+}
+.movieActive{
+	color: #f63;
+    border-bottom: 2px solid #f63;
+    font-weight: 700;
+}
+.moveFilm ul{
+	border-bottom: 1px solid #edecea;
+}
+.moveFilm ul:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.moveFilm ul li{
+	height: 48px;
+    line-height: 48px;
+    padding: 0 10px 0 0px;
+    float:left;
+}
+table{
+	width: 100%;
+}
+.moveFilm table tr{
+	height: 58px;
+	width: 100%;
+	border-bottom: 1px solid #edecea;
+}
+.moveFilm table tr td{
+	font-size:14px;
+}
+.moveFilm table tr td .start{
+	color:#000;
+}
+.moveFilm table tr td div{
+	color:#999;
+}
+.moveFilm table tr td .nowsprice{
+	color: #f63;
+    text-align: right
+}
+.moveFilm table tr td .buy{
+	color: #fff;
+    background: #f63;
+    padding: 0 20px;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-left:20px;
+}
+.moveFilm table .last td{
+	text-align:center;
+}
+.moveFilm table .last td .hide{
+	display:none;
+	position:relative;
+}
+.moveFilm table .last td .show{
+	display:block;
+	position:relative;
+}
+.up,.down{
+	position:absolute;
+	width: 18px;
+	height: 12px;
+	bottom: -12px;
+	left: 50%;
+	transform:translate(-50%,0);
+}
+.up{
+	background:url(../img/icon/up.png) no-repeat;
+}
+.down{
+	background:url(../img/icon/down.png) no-repeat;
+}
+
+/*foot*/
+.footer .title{
+	height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    margin-bottom:5px;
+}
+.footer .title span{
+	display:inline-block;
+	background:#f51b0a;
+	color:#fff;
+	line-height:16px;
+	height: 16px;
+	padding: 2px 3px;
+	margin-right:5px;
+}
+.footer ul li{
+	padding:5px 0px;
+	border-bottom: 1px solid #eee;
+	position:relative;
+}
+.footer ul li .right{
+	position:absolute;
+	right:15px;
+	top:50%;
+	height: 20px;
+	width: 15px;
+	background:url(../img/icon/right.png);
+	transform:translate(0,-50%);
+}
+.footer ul li:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.footer ul li img{
+	margin-right: 10px;
+    width: 60px;
+    height: 45px;
+    float:left;
+}
+.footer ul li .newtitle{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-size: 14px;
+}
+.footer ul li .info{
+	color: #f60;
+}
+.footer ul li .info .o-price{
+	text-decoration: line-through;
+	color: #000;
+	font-size:12px;
+    line-height: 10px;
+}

@@ -1,22 +1,19 @@
 <div class="content">
 	<div class="tit">
 		<span class="seat">座</span>选座购票
-		<span class="sub">(上映4部)</span>
+		<span class="sub">(上映<span ng-bind="movielist.length"></span>部)</span>
 	</div>
 	<div class="movie">
 		<ul>
-			<li><a href=""><img src="img/movie/1.jpg" alt=""></a></li>
-			<li><a href=""><img src="img/movie/2.jpg" alt=""></a></li>
-			<li><a href=""><img src="img/movie/3.jpg" alt=""></a></li>
-			<li><a href=""><img src="img/movie/4.jpg" alt=""></a></li>
-			<li><a href=""><img src="img/movie/5.jpg" alt=""></a></li>
-			<li><a href=""><img src="img/movie/6.png" alt=""></a></li>
+			<li ng-repeat = "movie in movielist" class="{{$index == 0 ? 'active' : ''}}" ng-click="event.choose()">
+				<img ng-repeat="(key,value) in movie" ng-if="key.indexOf('imgsrc') != -1" ng-src="{{value}}" alt="">
+			</li>
 		</ul>
 
 		<div class="movieText">
 			<div class="movieTitle">
-				<h3>金刚：骷髅岛<span class="score">8.3</span></h3>
-				<p>片长：119分钟</p>
+				<h3 ng-bind="movielist[num].name"><span class="score" ng-bind="movielist[num].score"></span></h3>
+				<p>片长：<span class="showtime" ng-bind="movielist[num].time"></span>分钟</p>
 				<a href="" class="movieDetail">影片详情<span>></span></a>
 			</div>
 			<div class="warning">温馨提示：电影开场前5分钟关闭在线售票</div>
@@ -24,62 +21,32 @@
 	</div>
 	<div class="moveFilm">
 		<ul>
-			<li>3月25日（今天）</li>
-			<li>3月25日（今天）</li>
+			<li ng-bind="today" class="movieActive" ng-click="event.chooseday()"></li>
+			<li ng-bind="tomorrow" ng-click="event.chooseday()"></li>
 		</ul>
 		<table>
-			<tr>
+			<tr ng-repeat="show in onflimTime" class="{{$index < 3 ? 'flimshow' : 'flimhidden'}}" >
 				<td width="30%">
-					<div class="start">11:00</div>
-					<div class="end">12:59结束</div>
+					<div class="start" ng-bind="onflimTime[$index].starttime" ></div>
+					<div class="end" ng-bind="onflimTime[$index].endtime"></div>
 				</td>
 				<td width="25%">
-					<div class="lang">英语/3D</div>
-					<div class="lang">8号厅</div>
+					<div class="lang" ng-bind="onflimTime[$index].language" ></div>
+					<div class="hall" ng-bind="onflimTime[$index].hall" ></div>
 				</td>
 				<td width="15%">
-					<div class="nowsprice">¥28</div>
+					<div class="nowsprice" ng-bind="onflimTime[$index].price" ></div>
 				</td>
 				<td width="30%">
 					<a href="" class="buy">购票</a>
 				</td>
+				
 			</tr>
-			<tr>
-				<td width="30%">
-					<div class="start">11:00</div>
-					<div class="end">12:59结束</div>
-				</td>
-				<td width="25%">
-					<div class="lang">英语/3D</div>
-					<div class="lang">8号厅</div>
-				</td>
-				<td width="15%">
-					<div class="nowsprice">¥28</div>
-				</td>
-				<td width="30%">
-					<a href="" class="buy">购票</a>
-				</td>
-			</tr>
-			<tr>
-				<td width="30%">
-					<div class="start">11:00</div>
-					<div class="end">12:59结束</div>
-				</td>
-				<td width="25%">
-					<div class="lang">英语/3D</div>
-					<div class="lang">8号厅</div>
-				</td>
-				<td width="15%">
-					<div class="nowsprice">¥28</div>
-				</td>
-				<td width="30%">
-					<a href="" class="buy">购票</a>
-				</td>
-			</tr>
+			
 			<tr class="last" >
-				<td colspan="100%">
+				<td colspan="100%" ng-click="event.show()">
 					<p class="show common">
-						查看全部31个场次<span class="down"></span>
+						查看全部<span ng-bind="onflimTime.length"></span>个场次<span class="down"></span>
 					</p>
 					<p class="hide common">收起<span class="up"></span></p>
 				</td>

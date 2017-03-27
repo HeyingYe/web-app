@@ -92,9 +92,13 @@ foot{
 .movie ul{
 	margin-bottom:20px;
 }
+.movie .active{
+	border: solid 2px #ff8000;
+}
 .movie ul li{
 	float: left;
 	margin-right: 10px;
+	border: solid 2px #fff;
 }
 .movie ul:after{
 	content:"";
@@ -164,6 +168,12 @@ foot{
 }
 table{
 	width: 100%;
+}
+// .moveFilm .flimshow{
+// 	display:block;
+// }
+.moveFilm .flimhidden{
+	display:none;
 }
 .moveFilm table tr{
 	height: 58px;
@@ -278,4 +288,10 @@ table{
 	color: #000;
 	font-size:12px;
     line-height: 10px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
 }

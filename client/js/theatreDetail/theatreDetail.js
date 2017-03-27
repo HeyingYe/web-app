@@ -69,22 +69,16 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 				}
 			},
 			choose:function(){
-				touch(".movie ul li","tap",function(ev){
+				touch.on(".movie ul li","tap",function(ev){
 					ev.preventDefault();
-					console.log(this)
-					$scope.num = $(this).index();
+					$scope.num = $(this).closest("li").index();
 					$(".movie ul li").removeClass("active")
 					.eq($scope.num).addClass("active");
 				})
-				// $(".movie ul li").click(function(){
-				// 	console.log(this)
-				// 	$scope.num = $(this).index();
-				// 	$(".movie ul li").removeClass("active")
-				// 	.eq($scope.num).addClass("active");
-				// })
+				
 			},
 			chooseday:function(){
-				touch(".moveFilm ul li","tap",function(ev){
+				touch.on(".moveFilm ul li","tap",function(ev){
 					ev.preventDefault();
 					console.log($(this).index())
 					if($(this).index() == 0){
@@ -97,18 +91,6 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 						.eq($(this).index()).addClass("movieActive");
 					}
 				})
-				// $(".moveFilm ul li").click(function(){
-				// 	console.log($(this).index())
-				// 	if($(this).index() == 0){
-				// 		$scope.onflimTime = $scope.time;//today
-				// 		$(".moveFilm ul li").removeClass()
-				// 		.eq(0).addClass("movieActive");
-				// 	}else if($(this).index() == 1){
-				// 		$scope.onflimTime = $scope.toTime;//tomorrow
-				// 		$(".moveFilm ul li").removeClass()
-				// 		.eq($(this).index()).addClass("movieActive");
-				// 	}
-				// })
 			}
 		}	
 }])

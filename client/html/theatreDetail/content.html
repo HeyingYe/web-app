@@ -4,11 +4,14 @@
 		<span class="sub">(上映<span ng-bind="movielist.length"></span>部)</span>
 	</div>
 	<div class="movie">
-		<ul>
-			<li ng-repeat = "movie in movielist" class="{{$index == 0 ? 'active' : ''}}" ng-click="event.choose()">
-				<img ng-repeat="(key,value) in movie" ng-if="key.indexOf('imgsrc') != -1" ng-src="{{value}}" alt="">
-			</li>
-		</ul>
+		<div class="swiper-container">
+			<ul class="swiper-wrapper">
+				<li ng-repeat = "movie in movielist" class="{{$index == 0 ? 'active swiper-slide' : 'swiper-slide'}}" ng-click="event.choose()">
+					<img ng-repeat="(key,value) in movie" ng-if="key.indexOf('imgsrc') != -1" ng-src="{{value}}" alt="">
+				</li>
+			</ul>
+		</div>
+		
 
 		<div class="movieText">
 			<div class="movieTitle">

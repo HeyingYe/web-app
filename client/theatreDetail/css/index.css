@@ -95,6 +95,14 @@ foot{
 .movie .active{
 	border: solid 2px #ff8000;
 }
+.movie .swiper-container{
+	width: 100%;
+	height: 80px;
+}
+.swiper-container .swiper-wrapper li{
+	width:58px;
+	height: 78px;
+}
 .movie ul li{
 	float: left;
 	margin-right: 10px;

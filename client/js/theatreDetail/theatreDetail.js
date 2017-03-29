@@ -5,7 +5,7 @@ theatreDetail.directive("top",function(){
 		templateUrl:"../html/theatreDetail/top.html?" + Math.random(),
 		scope:false,
 		controller:function($scope,$http,baseUrl){
-			
+
 		}
 	}
 })
@@ -15,7 +15,7 @@ theatreDetail.directive("content",function(){
 		templateUrl:"../html/theatreDetail/content.html?" + Math.random(),
 		scope:false,
 		controller:function($scope,$http){
-			
+
 		}
 	}
 })
@@ -25,7 +25,7 @@ theatreDetail.directive("foot",function(){
 		templateUrl:"../html/theatreDetail/foot.html?" + Math.random(),
 		scope:false,
 		controller:function($scope,$http){
-			
+
 		}
 	}
 })
@@ -45,8 +45,8 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 		$scope.tomorrow = tomorrow;
 		$scope.onflimTime = res.time;//默认显示今天上映的场次
 		$scope.num = 0;//电影的序号
-		console.log($scope.movielist)	
-		console.log($scope.theatre)	
+		console.log($scope.movielist)
+		console.log($scope.theatre)
 		console.log($scope.time)
 		console.log($scope.food)
 		console.log($scope.toTime)
@@ -75,7 +75,7 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 					$(".movie ul li").removeClass("active")
 					.eq($scope.num).addClass("active");
 				})
-				
+
 			},
 			chooseday:function(){
 				touch.on(".moveFilm ul li","tap",function(ev){
@@ -92,5 +92,5 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 					}
 				})
 			}
-		}	
+		}
 }])

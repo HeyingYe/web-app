@@ -22,7 +22,7 @@ var pool = mysql.createPool({
 module.exports = function(app){
 	//静态资源路由
 	app.use(express.static(path.join(__dirname,"../client/")));
-	
+
 	app.get("/index",function(req,res){
 		//主页
 		console.log("/index")
@@ -42,6 +42,7 @@ module.exports = function(app){
 			connection.query(sql,function(err,result){
 				// 影院资料
 				data.theatre = result;
+				console.log(result);
 				sql = "select * from " + result[0].gid;
 				connection.query(sql,function(err,result){
 					//电影列表
@@ -62,9 +63,7 @@ module.exports = function(app){
 								//连接不再使用，返回到连接池
 								connection.release();
 							})
-							
 						})
-						
 					})
 				})
 			})
@@ -77,6 +76,16 @@ module.exports = function(app){
 
 	app.get("/seat",function(req,res){
 		//选座
+		var data = {};
+		pool.getConnection(function(err,connection){
+			var sql = "select * from seat1";
+			connection.query(sql,function(err,result){
+				data.seat = result;
+				data = result[0];
+				res.send(data);
+				connection.release();
+			})
+		})
 	})
 }
 
@@ -97,7 +106,7 @@ module.exports = function(app){
 		// //sql操作语句
 		// var sql = "select * from theatreDetail";
 		// var data = {};//返回的数据
-		
+
 		// mysqlHandle.handle(connection,sql,function(result){
 		// 	//影院资料
 		// 	data.theatre = result;
@@ -115,6 +124,6 @@ module.exports = function(app){
 		// 			//关闭数据库连接
 		// 			mysqlHandle.close(connection);
 		// 		})
-				
+
 		// 	})
 		// });

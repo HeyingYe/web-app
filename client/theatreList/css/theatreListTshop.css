@@ -1,0 +1,22 @@
+/*导航栏*/
+.list_nav{position: relative;z-index: 300;background: #fff;width: 100%;background: url(../img/item.png)repeat-x 0 bottom;;background-size: auto 1px;;}
+.list_nav .fix_nav a{display: block;width: 33%;box-sizing: border-box;background: url() right center no-repeat;background-size: 0.0625rem auto;float: left;text-align: center;color: #646464;font-size: 0.8125rem;height:2.4375rem;line-height: 2.4375rem;position: relative;}
+.list_nav .fix_nav a i{display: inline-block; width: 0.8125rem;height: 0.4375rem;background: url(../img/drop.png) no-repeat 0 0;background-size: 0.8125rem auto;margin-left: 0.3125rem;-webkit-transition: -webkit-transform .3s;}
+.list_nav .fix_nav a:after{display: none;content: '';width: 1.0625rem;height: 0.4375rem;position: absolute;bottom: 0;left: 50%;margin-left: -0.5rem;background: url(../img/nav-select.png) no-repeat 0 0;background-size: 1.0625rem auto;}
+.list_nav .details_menu{width: 100%;position: absolute;left: 0;top: 2.4375rem;color: #323232;width: 100%;height: 16.875rem;font-size: 0.9375rem;overflow:auto; background-color: #fff;z-index: 99;}
+.list_nav .details_menu .item{padding-left: 0.9375rem; display: block;height: 2.8125rem;line-height: 2.8125rem;color: #323232;background: url(../img/item.png) repeat-x 0 bottom;background-size: auto 0.0625rem;}
+/*商品列表*/
+.shop_list{font-size: 0.75rem;background: #FFF;}
+.shop_list .item{display: block;padding-left: 0.875rem;}
+.shop_list .item .content{padding: 1.0rem 0.8125rem 0.75rem 0;}
+.shop_list .item .content h3{color: #323232;margin-bottom: 0.375rem;font-size: 1.0rem;font-weight: 400;display: -webkit-box;display: flex;}
+.shop_list .item .content h3 .title{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;flex-shrink: 1;}
+.mark_seat {background-color: #5eb22d;color: #FFF!important;padding: 0.125rem 0.1875rem;font-size: 0.75rem;display: inline-block;margin-left: 0.125rem;font-weight: 400;position: relative;top: -0.0625rem;}
+.shop_list .item .intro .movie_info {float: left;}
+.shop_list .item .intro .dis_info{float: right;padding-top: 0.5rem;text-overflow:ellipsis;}
+.shop_list .item .intro .dis_info span.add{white-space:nowrap; overflow:hidden;width: 3.75rem;}
+.shop_list .item span {vertical-align: middle;color: #666;}
+.shop_list .item .intro span {display: inline-block;}
+.shop_list .item .intro span.up_price { color: #666;font-size: 0.875rem;}
+.shop_list .item .intro span.up_price span {color: #f63;font-size: 0.75rem;}
+.shop_list .item .intro span.up_price .price {font-size: 1.375rem; color: #f63;vertical-align: 0;margin-right: 0.1875rem;}

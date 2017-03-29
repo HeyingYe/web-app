@@ -1,0 +1,27 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "description": "web app",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeyingYe/web-app.git"
+  },
+  "author": "the fourth group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeyingYe/web-app/issues"
+  },
+  "homepage": "https://github.com/HeyingYe/web-app#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "easy-mysql": "^1.0.3",
+    "easymysql": "^0.2.7",
+    "express": "^4.15.2",
+    "mysql": "^2.13.0"
+  }
+}

@@ -1,0 +1,15 @@
+<div class="movie_popular ">	
+        <div class="wrapper swiper-container">
+	       <div class="scroller swiper-wrapper">
+             <a href="#" class="slide swiper-slide" ng-repeat="(key,value) in movielist" >
+        		      <img ng-src="{{movielist[key].images}}" alt="">
+        		      <p class="tittle" ng-bind="movielist[key].tittle">金刚：骷髅岛</p>
+        		      <p class="score" ng-bind="movielist[key].score"></p>
+        		      <div class="tag">
+                	     <span class="type_tag new"></span>
+                  </div>
+    		      </a>
+         </div>
+	</div>
+	<div class="swiper-pagination"></div>
+</div>

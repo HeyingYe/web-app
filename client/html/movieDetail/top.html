@@ -1,0 +1,65 @@
+<!-- 顶部 -->
+<div class="top">
+    <!-- 返回 -->
+    <div class="return">&lt</div>
+    <!-- 名称 -->
+    <div class="name" ng-bind="data.movie[num].movieName"></div>
+    <!-- 分享 -->
+    <div class="share" ng-click="click()"></div>
+</div>
+<!-- 影片简介 -->
+<div class="abstract">
+    <div class="pic">
+        <img src="{{data.movie[num].src[num]}}" alt="">
+    </div>
+    <div class="discript">
+        <p class="movie-time movie-score">
+            <span class="star"></span>
+            <span class="score" ng-bind="data.movie[num].movieScore"></span>
+        </p>
+        <p class="movie-time" ng-bind="data.movie[num].movieDuration">
+            <span class="blue-tip">
+                    IMAX 3D
+                </span>
+        </p>
+        <p class="movie-time" ng-bind="data.movie[num].movieShowTime"></p>
+        <p class="movie-time" ng-bind="data.movie[num].movieType"></p>
+        <p class="movie-time" ng-bind="data.movie[num].movieArea"></p>
+    </div>
+</div>
+<div class="picture">
+    <div class="movie-picture">
+        <a href="#">
+            <img src="{{data.movie[num].src[1]}}" alt="">
+        </a>
+        <a href="#">
+            <img src="{{data.movie[num].src[2]}}" alt="">
+        </a>
+        <a href="#">
+            <img src="{{data.movie[num].src[3]}}" alt="">
+        </a>
+        <a href="#">
+            <img src="{{data.movie[num].src[4]}}" alt="">
+        </a>
+        <div class="tottle">
+            <a href="#">
+                全部</br>276张
+            </a>
+            <span class="more">&gt</span>
+        </div>
+    </div>
+</div>
+<!-- 阴影 -->
+<div class="shodow hide" id="shodow">
+</div>
+<div class="sharewb hide" id="sharewb">
+    <div class="middle">
+        <a href="" class="close-btn" ng-click="click_close()">×</a>
+        <p>分享到：</p>
+        <ul>
+            <li class="sinaweibo"></li>
+            <li class="qqzong"></li>
+            <li class="tencentweibo"></li>
+        </ul>
+    </div>
+</div>

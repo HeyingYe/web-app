@@ -1,0 +1,71 @@
+1.git clone https://github.com/HeyingYe/web-app.git（拉取最新文件）
+2.git add . (添加本地所有文件)
+3.git commit -m "描述"(文件改动的描述内容)
+4.git push  (将改动文件上传至git 远程库)
+
+touch webapp （大众点评）
+
+   实现功能，使用的技术
+
+	1.实现页面向上向下手势滑动（前几天封装的手势判断toTop,toBottom，click）	
+
+	2.滑到页面底部，页面刷新（使用iscroll.js插件）
+	
+	3.滑到页面底部，进行懒加载（预加载，使用jq插件jquery.lazyload.js）
+
+   页面布局
+
+	1.浏览器使用手机模式，打开大众点评页面，下载好需要用的素材（图片，内容）
+	2.页面布局基本与pc端布局差不多(要求使用百分比布局或者新弹性盒子布局，至少要求用百分比) 
+
+	（注：先实现布局，再具体实现各个功能模块）
+
+使用NG制作
+
+1、主页         //梁达文   星期一交货
+2、影院列表     //黄沛彬   星期天下午
+3、影院详情     //叶河英    星期天下午
+4、电影详情    //赵丰      星期天晚上
+5、选座      //王鑫        星期天
+
+所有方法用面向对象写
+event.js
+var xuanzuo = {
+init:function(){
+	this.sockte()//动态接收数据
+},
+data:null,
+sure:function(){},
+
+tui:function()｛｝，
+socket:funcion(){}
+
+｝
+//封装插件方法：构造函数，工厂化生产，jq
+工厂化生产：
+function objss(){
+	var newobj = new Object();
+	newobj.init =  function(){};
+	newobj.name = "ss";
+	return newobj;
+}
+objss()// == new Obj();(与构造函数原理一样)
+$.fn.sdsd = function(){
+	
+}
+$("input").sdsd();//实例对象调用
+$.sss = function(){
+
+}
+$.sss();//直接调用
+index.js 入口文件（写上注释，变量名语义化，最好是英文，编码习惯，运算符号前后空格，代码整洁）
+xuanzuo.init();//初始化显示页面
+xuanzuo.sure();//选座事件
+xuanzuo.tui();//退选
+div.click =xuanzuo.sure;
+
+项目上线需要打包成webapp
+webpack
+//gulp 
+
+}

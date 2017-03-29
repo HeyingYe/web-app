@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width"> -->
+	<title>theatreDetail</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="../js/libs/jquery.js"></script>
+	<script src="../js/libs/touch/touch.min.js"></script>
+	<script src="../js/libs/swiper/swiper.min.js"></script>
+	<script src="../js/libs/angular/angular.min.js"></script>
+	<script src="../js/libs/angular-ui/angular-ui-router.min.js"></script>
+	<script src="../js/common/global.js"></script>
+	<script src="../js/theatreDetail/theatreDetail.js"></script>
+</head>
+<body ng-app="theatreDetail" ng-controller="tDetail">
+	<div class="wrap">
+		<top></top>
+		<content></content>
+		<foot></foot>
+	</div>
+	<script>
+		setTimeout(function(){
+			var swiper = new Swiper('.swiper-container', {
+		        slidesPerView: 5,
+		        spaceBetween: 10,
+		        observer:true,
+			    observerParents:true
+	    	});
+		},1000)
+	</script>
+</body>
+</html>

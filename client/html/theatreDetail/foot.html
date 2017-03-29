@@ -1,0 +1,15 @@
+<div class="footer">
+	<div class="title"><span>团</span>附近美食</div>
+	<ul>
+		<li ng-repeat="obj in food">
+			<img ng-src="{{food[$index].imgsrc}}" alt="">
+			<p class="newtitle" ng-bind="food[$index].name"></p>
+			<div class="info">
+                <span class="symbol">¥</span><span class="price" ng-bind="food[$index].price"></span>
+                <span class="o-price" ng-bind="food[$index].oprice"></span>
+                <span class="right"></span>
+            </div>
+		</li>
+		
+	</ul>
+</div>

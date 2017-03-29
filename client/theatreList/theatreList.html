@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>详情列表</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" name="viewport" />
+		<link rel="stylesheet" href="../theatreList/css/theatreListTop.css">
+        <link rel="stylesheet" href="../theatreList/css/theatreListbanner.css">
+        <link rel="stylesheet" href="../theatreList/css/theatreListTshop.css">
+		<link rel="stylesheet" href="../theatreList/css/swiper.min.css">
+		<script type="text/javascript" src='../js/libs/jquery.js'></script>
+		<script src="../js/libs/touch/touch.min.js"></script>
+		<script type="text/javascript" src="../js/libs/angular/angular.min.js"></script>
+	
+		<script src="../js/common/global.js"></script>
+	    <script type="text/javascript" src="../js/theatreList/theatreList.js"></script>
+	    <script type="text/javascript" src="../js/libs/swiper/swiper.min.js"></script>
+	     <script>
+			setTimeout(function(){
+				var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				observer:true,//修改swiper自己或子元素时，自动初始化swiper
+	            observeParents:true,//修改swiper的父元素时，自动初始化swiper
+				slidesPerView: 20,
+				spaceBetween: 50,
+				breakpoints: {
+					1024: {
+						slidesPerView: 15,
+						spaceBetween: 40
+					},
+					768: {
+						slidesPerView: 10,
+						spaceBetween: 30
+					},
+					640: {
+						slidesPerView: 5,
+						spaceBetween: 20
+					},
+					320: {
+						slidesPerView: 1,
+						spaceBetween: 10
+					}
+				}
+             })
+			},1000);
+        </script>
+</head>
+<body ng-app="theatreDetail" ng-controller="moveController">
+   <div class="top"></div>
+   <div class="banner"></div>
+   <div class="shop"></div>
+   
+</body>
+</html>

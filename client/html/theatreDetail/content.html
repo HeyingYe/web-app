@@ -1,0 +1,61 @@
+<div class="content">
+	<div class="tit">
+		<span class="seat">座</span>选座购票
+		<span class="sub">(上映<span ng-bind="movielist.length"></span>部)</span>
+	</div>
+	<div class="movie">
+		<div class="swiper-container">
+			<ul class="swiper-wrapper">
+				<li ng-repeat = "movie in movielist" class="{{$index == 0 ? 'active swiper-slide' : 'swiper-slide'}}" ng-click="event.choose($event)">
+					<img ng-repeat="(key,value) in movie" ng-if="key.indexOf('imgsrc') != -1" ng-src="{{value}}" alt="">
+				</li>
+			</ul>
+		</div>
+		<div class="movieText">
+			<div class="movieTitle">
+				<h3 ng-bind="movielist[num].name"><span class="score" ng-bind="movielist[num].score"></span></h3>
+				<p>片长：<span class="showtime" ng-bind="movielist[num].time"></span>分钟</p>
+				<a ng-href="http://10.3.135.48:8080/moveDetail/html/moveDetail.html?movieId={{num}}" class="movieDetail">影片详情<span>></span></a>
+			</div>
+			<div class="warning">温馨提示：电影开场前5分钟关闭在线售票</div>
+		</div>
+	</div>
+	<div class="moveFilm">
+		<ul>
+			<li ng-bind="today" class="movieActive" ng-click="event.chooseday($event)"></li>
+			<li ng-bind="tomorrow" ng-click="event.chooseday($event)"></li>
+		</ul>
+		<table>
+			<tr ng-repeat="show in onflimTime" class="{{$index < 3 ? 'flimshow' : 'flimhidden'}}" >
+				<td width="30%">
+					<div class="start" ng-bind="onflimTime[$index].starttime" ></div>
+					<div class="end" ng-bind="onflimTime[$index].endtime"></div>
+				</td>
+				<td width="25%">
+					<div class="lang" ng-bind="onflimTime[$index].language" ></div>
+					<div class="hall" ng-bind="onflimTime[$index].hall" ></div>
+				</td>
+				<td width="15%">
+					<div class="nowsprice" ng-bind="onflimTime[$index].price" ></div>
+				</td>
+				<td width="30%">
+					<a ng-href="http://10.3.135.48:8080/seat/seat.html?seat=seat{{$index + 1}}" class="buy">购票</a>
+				</td>
+			</tr>
+			
+			<tr class="last" >
+				<td colspan="100%" ng-click="event.show($event)">
+					<p class="show common">
+						<!-- 查看全部
+						<span ng-bind="onflimTime.length"></span>个场次 -->
+						<p ng-bind="movienum"></p>
+						<span class="down"></span>
+					</p>
+					<!-- <p class="hide common">
+						收起<span class="up" ng-click="event.show()"></span>
+					</p> -->
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

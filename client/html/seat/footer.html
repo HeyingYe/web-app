@@ -1,0 +1,13 @@
+<div class="seatChoice">
+  <div class="upLimit">一次最多选四个座位</div>
+  <div class="seatPosition"></div>
+  <div class="price">￥<span ng-bind="prices"></span></div>
+</div>
+<div class="telInfo">
+  <div class="seatTel">
+    <input id="phoneNum" type="tel" placeholder="请输入手机号码">
+    <div class="close" ng-click="event.delete()"></div>
+  </div>
+  <button type="submit" id="seatBtn">请选座位</button>
+  <button type="submit" id="sbmBtn">提交订单</button>
+</div>

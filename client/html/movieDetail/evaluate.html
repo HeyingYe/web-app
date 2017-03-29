@@ -1,0 +1,48 @@
+<div class="evaluate">
+    <div class="tottle-number">
+        <span>网友影评(944)</span>
+        <span>&gt</span>
+    </div>
+    <!-- 评价列表 -->
+    <div class="evaluate-list">
+        <a href="" class="flex-box" ng-repeat="x in data.evaluate" ng-if="x.movieId == 1">
+            <div class="head-sculpture">
+                <img ng-src="{{x.src[0]}}" alt="">
+                <span></span>
+            </div>
+            <div class="evaluate-info ">
+                <p class="name" ng-bind="x.peopleNick"></p>
+                <p class="rank"></p>
+                <p class="talk" ng-bind="x.morecomment"></p>
+                <p class="see-more" ng-click="see_more()"><span>&gt</span></p>
+                <div class="imgs">
+                    <img class="img-enlarge" ng-src="{{x.src[1]}}" alt="">
+                    <img class="img-enlarge" ng-src="{{x.src[2]}}" alt="">
+                    <img class="img-enlarge" ng-src="{{x.src[3]}}" alt="">
+                </div>
+                <p class="time">
+                    <span ng-bind="x.time">03-24 12:21</span>
+                    <span>
+                    <span class="love"></span>
+                    <span ng-bind="x.love">113</span>
+                    <span class="say"></span>
+                    <span ng-bind="x.discuss">15</span>
+                    </span>
+                </p>
+            </div>
+        </a>
+        <!-- 阴影 -->
+        <div class="shodow hide" id="shodow1">
+        </div>
+        <div class="swiper-container ">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../img/1.png" alt=""></div>
+                <div class="swiper-slide"><img src="../img/2.png" alt=""></div>
+                <div class="swiper-slide"><img src="../img/3.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var swiper = new Swiper('.swiper-container');
+</script>

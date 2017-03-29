@@ -49,6 +49,7 @@ seatApp.filter('row',function(){
     return array;
   }
 })
+
 seatApp.controller("seatCtrl",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
   //存储数据
   $http.get(baseUrl + "/seat").success(function(res){
@@ -67,54 +68,51 @@ seatApp.controller("seatCtrl",["$scope","$http","baseUrl",function($scope,$http,
    weekday[4]="星期五"
    weekday[5]="星期六"
    weekday[6]="星期日"
-   var tomorrow = "明天" + date.getMonth() + 1 + "月" + (date.getDate() + 1) + "日" + "（" + weekday[date.getDay()] + "）";
+   var tomorrow = "明天 " + (date.getMonth() + 1) + "月" + (date.getDate() + 1) + "日" + "（" + weekday[date.getDay()] + "）";
    $scope.tomorrow = tomorrow;
-   // console.log(res);
-   // console.log($scope.tomorrow)
-   // console.log($scope.cinemaName)
-   // console.log($scope.movieName)
-   // console.log($scope.language)
-   // console.log($scope.time)
-   // console.log($scope.hall)
-   // console.log($scope.price)
- })
+  })
+
   //事件
+  //设定选座数量
   var seatNum = 0;
   $scope.event = {
+    //选座
     slect:function(e){
-      // console.log(e.target)
+      //获取座位排数
       var ulNum = $('ul').index($(e.target).parent());
+      //获取座位数
       var liNum = $(e.target).parent().children().index($(e.target));
-      // var x = $(".abc").length+1;
-      // console.log(x);
-      // console.log($('.abc'));
       if(seatNum < 4){
         if( $(e.target).hasClass('green') ){
+          //移除选座样式
           $(e.target).removeClass('green');
+          //移除座位信息框
+          $("span[data-num=" + ulNum + "" + liNum + "]").remove();
           seatNum -= 1;
-
-          var x = $(".abc").length;
-          console.log(x);
-          console.log($(".abc"));
-          $(".abc").eq(x-1).css("display","none");
         }else{
+          //添加选座样式
           $(e.target).addClass('green');
-          seatNum += 1;
+          //隐藏座位上限提示
           $('.upLimit').hide();
-          $("<span class='abc'>"+ulNum+"排"+liNum+"座</span>").appendTo('.seatPosition');
+          //添加座位信息框
+          $("<span data-num='" + ulNum + liNum + "'>"+ ulNum + "排" + liNum + "座</span>").appendTo('.seatPosition');
+          seatNum += 1;
         }
       }else{
         if( $(e.target).hasClass('green') ){
           $(e.target).removeClass('green');
+          $("span[data-num=" + ulNum + "" + liNum + "]").remove();
           seatNum = seatNum - 1;
         }else{
+          //添加选座上限提示遮罩
           $('<div class="mask"><span class="prompt">每次最多可选4个位置<span></div>').appendTo('body');
           setTimeout(function(){
             $('.mask').remove();
           },2500)
         }
       }
-      $scope.prices = $scope.price * seatNum;
+      $scope.prices = $scope.price * seatNum +".00";
+      //选座后按钮切换
       if(seatNum != 0){
         $('#seatBtn').hide();
         $('#sbmBtn').css('display','block');
@@ -122,6 +120,14 @@ seatApp.controller("seatCtrl",["$scope","$http","baseUrl",function($scope,$http,
         $('#seatBtn').show();
         $('#sbmBtn').css('display','none');
       }
+    },
+    //清空手机号输入框
+    delete:function(){
+      $('#phoneNum').val('');
+    },
+    //页面回退
+    back:function(){
+      history.back();
     }
   }
 }])

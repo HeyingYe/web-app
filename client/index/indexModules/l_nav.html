@@ -3,7 +3,8 @@
     	<!--遍历部分-->
         <div class="swiper-slide">
         	<div class="page">
-        			<a href="#" class="item" ng-repeat="list1 in nav1">
+        		<!--http://172.17.98.1:8080/index/theatreList.html-->
+        			<a href="http://10.3.135.74:8080/index/theatreList.html?theatreList={{list1.navId}}" class="item" ng-repeat="list1 in nav1">
         				<img class="icon" ng-src="{{list1.navImg}}" alt="#" />
         				<div ng-bind="list1.navName">猫眼电影</div>
         			</a>
@@ -11,7 +12,7 @@
         </div>
         <div class="swiper-slide">
         	<div class="page">
-        			<a href="#" class="item" ng-repeat="list2 in nav2">
+        			<a href="http://10.3.135.74:8080/index/theatreList.html?theatreList={{list2.navId}}" class="item" ng-repeat="list2 in nav2">
         				<img class="icon" ng-src="{{list2.navImg}}" alt="#" />
         				<div ng-bind="list2.navName">猫眼电影</div>
         			</a>
@@ -19,7 +20,7 @@
         </div>
         <div class="swiper-slide">
         	<div class="page">
-        			<a href="#" class="item" ng-repeat="list3 in nav3">
+        			<a href="http://10.3.135.74:8080/index/theatreList.html?theatreList={{list3.navId}}" class="item" ng-repeat="list3 in nav3">
         				<img class="icon" ng-src="{{list3.navImg}}" alt="#" />
         				<div ng-bind="list3.navName">猫眼电影</div>
         			</a>

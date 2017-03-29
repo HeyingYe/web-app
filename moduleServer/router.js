@@ -17,15 +17,15 @@ var pool = mysql.createPool({
 	user:"root",
 	password:"",
 	database:"webapp"
-//	database:"teamwork"
 })
 
 module.exports = function(app){
 	//静态资源路由
 	app.use(express.static(path.join(__dirname,"../client/")));
-	
+
 	app.get("/index",function(req,res){
 		//主页
+
 		console.log("/index")
 		var data = {};
 		pool.getConnection(function(err,connection){
@@ -83,11 +83,17 @@ module.exports = function(app){
 			connection.query(sql,function(err,result){
 				// 影院资料
 				data.theatre = result;
+				// console.log(result);
 				sql = "select * from " + result[0].gid;
 				connection.query(sql,function(err,result){
 					//电影列表
 					data.movielist = result;
 					sql = "select * from " + result[0].todaytime;
+					// sql1_today = "select * from " + result[0].todaytime;
+					// sql1_food = "select * from " + result[0].food;
+					// sql1_tomorrow = "select * from " + result[0].tomorrowtime;
+					// sql2_today = "select * from " + result[1].todaytime;
+					// sql2_tomorrow = "select * from " + result[1].tomorrowtime;
 					connection.query(sql,function(err,result){
 						//电影今天的场次
 						data.time = result;
@@ -97,15 +103,14 @@ module.exports = function(app){
 							//电影明天的场次
 							sql = "select * from tomorrow1";
 							connection.query(sql,function(err,result){
+								sql = "select * from tomorrow1";
 								data.tomorrow = result;
 								//发送数据
 								res.send(data);
 								//连接不再使用，返回到连接池
 								connection.release();
 							})
-							
 						})
-						
 					})
 				})
 			})
@@ -118,6 +123,20 @@ module.exports = function(app){
 
 	app.get("/seat",function(req,res){
 		//选座
+		var address = (req.headers.referer.split("?"))[1];
+		console.log(address)
+		var search = (address.split("="))[1];
+		console.log(search)
+		var data = {};
+		pool.getConnection(function(err,connection){
+			var sql = "select * from " + search;
+			connection.query(sql,function(err,result){
+				data.seat = result;
+				data = result[0];
+				res.send(data);
+				connection.release();
+			})
+		})
 	})
 }
 
@@ -138,7 +157,7 @@ module.exports = function(app){
 		// //sql操作语句
 		// var sql = "select * from theatreDetail";
 		// var data = {};//返回的数据
-		
+
 		// mysqlHandle.handle(connection,sql,function(result){
 		// 	//影院资料
 		// 	data.theatre = result;
@@ -156,6 +175,6 @@ module.exports = function(app){
 		// 			//关闭数据库连接
 		// 			mysqlHandle.close(connection);
 		// 		})
-				
+
 		// 	})
 		// });

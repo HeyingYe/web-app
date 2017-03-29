@@ -1,0 +1,42 @@
+<div class="movieDetail">
+  <div class="movieInfo">
+    <div class="movie">
+      <span class="movieName" ng-bind="movieName"></span>
+      <span class="sub" ng-bind="language"></span>
+    </div>
+    <div class="date"><span ng-bind="tomorrow"></span><span ng-bind="time"></span></div>
+  </div>
+</div>
+<div class="seatStyle">
+  <ul class="seatType">
+      <li class="empty">可选</li>
+      <li class="choice">已选</li>
+      <li class="seld">已售</li>
+      <li class="couple">情侣座</li>
+  </ul>
+  <div class="screen" ng-bind="hall"></div>
+</div>
+<div class="seatArea">
+  <ol class="seatCol">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+  </ol>
+  <div class="seatMain">
+    <div class="seats">
+      <div class="line"></div>
+      <ul ng-repeat = "n in [] | col:10">
+        <li ng-repeat = "n in [] | row: 12" ng-click="event.slect($event)"></li>
+      </ul>
+    </div>
+    <div class="provider">该场次由猫眼电影提供信息支持</div>
+  </div>
+
+</div>

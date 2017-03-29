@@ -293,6 +293,10 @@ a{
 }
 
 /*超值特惠*/
+.title{
+	color: #333;
+}
+
 .l_czth .index_sale_block{
     padding: 7px 6px 10px;
     background-color: #fff ;
@@ -704,6 +708,19 @@ a{
     right: 10px;
     top: 0;
     font-size: 14px;
+}
+
+/*免费领取*/
+.gift {
+    background: url(../img/free.png) right -50px no-repeat;
+    background-size: auto 230px;
+    width: 65px;
+    height: 45px;
+    position: fixed;
+    bottom: 120px;
+    right: -1px;
+    display: block;
+    z-index: 99;
 }
 
 

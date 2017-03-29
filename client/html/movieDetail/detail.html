@@ -6,22 +6,22 @@
     <div class="introduce">
         <!-- 演员头像 -->
         <div class="actor">
-            <a href="#" ng-repeat="x in data.detail[0].src">
+            <a href="#" ng-repeat="x in data.detail[num].src">
                 <img ng-src="{{x}}" alt="">
             </a>
         </div>
         <!-- 文字简介 -->
         <div class="info">
             <p>导演：</p>
-            <p ng-bind="data.detail[0].director"></p>
+            <p ng-bind="data.detail[num].director"></p>
         </div>
         <div class="info">
             <p>主演：</p>
-            <p class="info-mation" ng-bind="data.detail[0].actor"></p>
+            <p class="info-mation" ng-bind="data.detail[num].actor"></p>
         </div>
         <div class="info" ng-hide=bool>
             <p>剧情：</p>
-            <p class="info-mation" id="info-mation" ng-bind="data.detail[0].story"></p>
+            <p class="info-mation" id="info-mation" ng-bind="data.detail[num].story"></p>
         </div>
         <!-- 查看更多 -->
         <div  ng-hide=bool class="check-more" ng-click="check_more($event)" id="check-more">
@@ -30,7 +30,7 @@
         </div>
         <div class="info" ng-hide=!bool>
             <p>剧情：</p>
-            <p class="info-mation" id="info-mation" ng-bind="data.detail[0].morestory"></p>
+            <p class="info-mation" id="info-mation" ng-bind="data.detail[num].morestory"></p>
         </div>
         <!-- 查看更多 -->
         <div    ng-hide=!bool class="check-more" ng-click="check_more($event)" id="check-more">

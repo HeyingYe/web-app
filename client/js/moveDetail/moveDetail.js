@@ -40,13 +40,12 @@ movieDetail.directive("foot",function(){
 	}
 })
 movieDetail.controller("mDetail",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
-	$http.get(baseUrl + "/moveDetail").success(function(res){
+    $http.get(baseUrl + "/moveDetail").success(function(res){
         //?movieId=1
-        // var str = location.serach;
-        // var arr=str.split('=');
-        // var id = arr[1];
-        // $scope.num = id;
-		console.log(res);
+        var str = location.search;
+        var arr=str.split('=');
+        var id = arr[1];
+        $scope.num = id;
         $scope.data = res;//存储数据
         for(var i=0;i<$scope.data.movie.length;i++){
             var arr1 = $scope.data.movie[i].src.split(",");

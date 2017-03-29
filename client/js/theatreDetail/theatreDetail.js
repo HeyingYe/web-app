@@ -46,11 +46,6 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 		$scope.onflimTime = res.time;//默认显示今天上映的场次
 		$scope.num = 0;//电影的序号
 		$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
-		console.log($scope.movielist)
-		console.log($scope.theatre)
-		console.log($scope.time)
-		console.log($scope.food)
-		console.log($scope.toTime)
 	})
 	$scope.event = {
 		show:function(e){
@@ -61,13 +56,7 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 				});
 				$scope.movienum = "收起";
 				$(".down").removeClass().addClass("up");
-				console.log(11)
-				// $(".common").html("");
-				// $("<span'>收起</span><span class='up'></span>").appendTo(".common");
-				// $(".common").html("<span'>收起</span><span class='up'></span>")
-
 			}else{
-				console.log(22)
 				$("tr").eq(2).nextAll().addClass("flimhidden");
 				$(".last").removeClass("flimhidden");
 				$(".up").css({
@@ -75,30 +64,8 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 				})
 				$(".up").removeClass().addClass("down");
 				$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
-				// $(".common").html("");
-				// $("<span>查看全部</span><span ng-bind='onflimTime.length'></span>个场次<span class='down'></span>").appendTo(".common");
-				// $(".common").html("<span>查看全部</span><span ng-bind='onflimTime.length'></span>个场次<span class='down'></span>")
 			}
-			// console.log($(".show").css("opacity"))
-			// if($(".show").css("display") == "block"){
-			// 	$(".show").css({
-			// 		display:"none",
-			// 	});
-			// 	$("tr").removeClass("flimhidden");
-			// 	$(".hide").css({
-			// 		display:"block"
-			// 	})
-
-			// }else{
-			// 	$(".show").css({
-			// 		display:"block"
-			// 	});
-			// 	$("tr").eq(2).nextAll().addClass("flimhidden");
-			// 	$(".last").removeClass("flimhidden");
-			// 	$(".hide").css({
-			// 		display:"none"
-			// 	})
-			// }
+		
 		},
 		choose:function(e){
 			$scope.num = $(e.target).closest("li").index();

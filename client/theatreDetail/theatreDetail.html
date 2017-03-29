@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<script src="../js/libs/jquery.js"></script>
+	<script src="../js/libs/touch/touch.min.js"></script>
 	<script src="../js/libs/swiper/swiper.min.js"></script>
 	<script src="../js/libs/angular/angular.min.js"></script>
 	<script src="../js/libs/angular-ui/angular-ui-router.min.js"></script>
@@ -22,11 +23,14 @@
 		<foot></foot>
 	</div>
 	<script>
-		var swiper = new Swiper('.swiper-container', {
-	        slidesPerView: 3,
-	        paginationClickable: true,
-	        spaceBetween: 3
-	    });
+		setTimeout(function(){
+			var swiper = new Swiper('.swiper-container', {
+		        slidesPerView: 5,
+		        spaceBetween: 10,
+		        observer:true,
+			    observerParents:true
+	    	});
+		},1000)
 	</script>
 </body>
 </html>

@@ -1,10 +1,12 @@
 <div class="top">
-	<a href="" class="back"><span><</span>看电影</a>
+	<a ng-click="event.back()" class="back"><span><</span>看电影</a>
 	<span class="theatre">影院详情</span>
 </div>
 <div class="theatre_intro">
-	<h3 class="theatrename">中数华昇巨幕影院(萝岗店)<span class="seat">座</span></h3>
+	<h3 class="theatrename" ng-bind="theatre[0].name">
+		<span class="seat">座</span>
+	</h3>
 	<span class="star"></span>
-	<p>飞晟二街6号301房</p>
+	<p ng-bind="theatre[0].address"></p>
 	<span class="right">></span>
 </div>

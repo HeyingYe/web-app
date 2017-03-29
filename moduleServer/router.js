@@ -42,7 +42,7 @@ module.exports = function(app){
 			connection.query(sql,function(err,result){
 				// 影院资料
 				data.theatre = result;
-				console.log(result);
+				// console.log(result);
 				sql = "select * from " + result[0].gid;
 				connection.query(sql,function(err,result){
 					//电影列表
@@ -82,9 +82,13 @@ module.exports = function(app){
 
 	app.get("/seat",function(req,res){
 		//选座
+		var address = (req.headers.referer.split("?"))[1];
+		console.log(address)
+		var search = (address.split("="))[1];
+		console.log(search)
 		var data = {};
 		pool.getConnection(function(err,connection){
-			var sql = "select * from seat1";
+			var sql = "select * from " + search;
 			connection.query(sql,function(err,result){
 				data.seat = result;
 				data = result[0];

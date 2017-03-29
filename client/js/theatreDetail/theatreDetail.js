@@ -45,59 +45,12 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 		$scope.tomorrow = tomorrow;
 		$scope.onflimTime = res.time;//默认显示今天上映的场次
 		$scope.num = 0;//电影的序号
-<<<<<<< HEAD
+		$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
 		console.log($scope.movielist)
 		console.log($scope.theatre)
 		console.log($scope.time)
 		console.log($scope.food)
 		console.log($scope.toTime)
-	})
-	$scope.event = {
-			show:function(){
-				if($(".down")[0]){
-					$("tr").removeClass("flimhidden");
-					$(".down").css({
-						"background":"url(../img/icon/up.png) no-repeat;"
-					})
-					$(".down").removeClass().addClass("up");
-				}else{
-					$("tr").eq(2).nextAll().addClass("flimhidden");
-					$(".last").removeClass("flimhidden");
-					$(".up").css({
-						"background":"url(../img/icon/down.png) no-repeat;"
-					})
-					$(".up").removeClass().addClass("down");
-				}
-			},
-			choose:function(){
-				touch.on(".movie ul li","tap",function(ev){
-					ev.preventDefault();
-					$scope.num = $(this).closest("li").index();
-					$(".movie ul li").removeClass("active")
-					.eq($scope.num).addClass("active");
-				})
-
-			},
-			chooseday:function(){
-				touch.on(".moveFilm ul li","tap",function(ev){
-					ev.preventDefault();
-					console.log($(this).index())
-					if($(this).index() == 0){
-						$scope.onflimTime = $scope.time;//today
-						$(".moveFilm ul li").removeClass()
-						.eq(0).addClass("movieActive");
-					}else if($(this).index() == 1){
-						$scope.onflimTime = $scope.toTime;//tomorrow
-						$(".moveFilm ul li").removeClass()
-						.eq($(this).index()).addClass("movieActive");
-					}
-=======
-		$scope.movienum = "查看全部" + res.time.length + "个场次";
-		console.log($scope.movielist)//电影列表：
-		console.log($scope.theatre)//影院资料
-		console.log($scope.time)//今天上映场次
-		console.log($scope.food)//美食
-		console.log($scope.toTime)//明天上映场次
 	})
 	$scope.event = {
 		show:function(e){
@@ -119,7 +72,6 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 				$(".last").removeClass("flimhidden");
 				$(".up").css({
 					"background":"url(../img/icon/down.png) no-repeat;"
->>>>>>> d3f9149d70cf25f680378e10167a616b054c7660
 				})
 				$(".up").removeClass().addClass("down");
 				$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
@@ -149,36 +101,11 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 			// }
 		},
 		choose:function(e){
-			//事件重复绑定
-			// touch.on(".movie ul li","tap",function(ev){
-			// 	ev.preventDefault();
-			// 	// console.log(li)
-			// 	$scope.num = $(this).closest("li").index();
-			// 	$(".movie ul li").removeClass("active")
-			// 	.eq($scope.num).addClass("active");
-			// })
-			// touch.off(".movie ul li","tap");
-			// console.log($(e.target).closest("li").index())
 			$scope.num = $(e.target).closest("li").index();
 			$(".movie ul li").removeClass("active")
 				.eq($scope.num).addClass("active");
 		},
 		chooseday:function(e){
-			// console.log(e)//事件重复绑定
-			// touch.on(".moveFilm ul li","tap",function(ev){
-			// 	ev.preventDefault();
-			// 	console.log($(this).index())
-			// 	if($(this).index() == 0){
-			// 		$scope.onflimTime = $scope.time;//today
-			// 		$(".moveFilm ul li").removeClass()
-			// 		.eq(0).addClass("movieActive");
-			// 	}else if($(this).index() == 1){
-			// 		$scope.onflimTime = $scope.toTime;//tomorrow
-			// 		$(".moveFilm ul li").removeClass()
-			// 		.eq($(this).index()).addClass("movieActive");
-			// 	}
-			// })
-			// touch.off(".moveFilm ul li","tap");
 			console.log($(e.target).index())//obj
 			$("tr").eq(2).nextAll().addClass("flimhidden");
 			$(".last").removeClass("flimhidden");
@@ -199,10 +126,9 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 				$(".moveFilm ul li").removeClass()
 				.eq($(e.target).index()).addClass("movieActive");
 			}
+		},
+		back:function(){
+			history.back();
 		}
-<<<<<<< HEAD
-}])
-=======
 	}	
 }])
->>>>>>> d3f9149d70cf25f680378e10167a616b054c7660

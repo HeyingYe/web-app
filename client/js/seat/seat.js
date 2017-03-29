@@ -51,7 +51,16 @@ seatApp.filter('row',function(){
 })
 seatApp.controller("seatCtrl",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
   //存储数据
-  $http.get(baseUrl + "/seat").success(function(res){
+  var search = location.search;
+  var seatId = (search.split("="))[1];
+  console.log(seatId)
+  $http({
+    url:baseUrl + "/seat",
+    method:"get",
+    data:{
+      search:seatId
+    },
+  }).success(function(res){
    $scope.cinemaName = res.cinemaName;//影院名称
    $scope.movieName = res.movieName;//电影名称
    $scope.language = res.language;//电影语言

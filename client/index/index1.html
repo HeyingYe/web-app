@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" name="viewport" />
+	<link rel="stylesheet" type="text/css" href="../index/css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="libs/swiper/swiper.min.css"/>
+	
+	<script type="text/javascript" src="libs/swiper/swiper.min.js"></script>
+	<script type="text/javascript" src="libs/jquery/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="libs/angular/angular.min.js"></script>
+	<script type="text/javascript" src="libs/angular-ui/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="../js/libs/touch/touch.min.js"></script>
+	
+	<script type="text/javascript" src="../js/common/global.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	
+	
+	<title>index</title>
+</head>
+<body ng-app="indexApp" ng-controller="indexController">
+	<!--头部-->
+	<div class="l_header"></div>	
+	<!--download-->
+	<div class="l_download"></div>
+	<!--导航-->
+	<div class="l_nav"></div>
+	<!--点评头条-->
+	<div class="l_headline"></div>
+	<!--天天特价-->
+	<div class="l_banner"></div>
+	<!--外卖-->
+	<div class="l_wm"></div>
+	<!--有颜就有钱-->
+	<div class="l_yyjyq"></div>
+	<!--超值特惠-->
+	<div class="l_czth"></div>
+	<!--天天立减-->
+	<div class="l_ttlj"></div>
+	<!--懒加载部分-->
+	<div class="l_cnxh"></div>
+	<!--脚部-->
+	<div class="l_footer"></div>
+	<!--搜索-->
+	<div class="search_container"></div>
+	
+	<script type="text/javascript">
+		setTimeout(function(){
+			var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true
+	    	});
+	    	var swiper = new Swiper('.swiper-fixedWindow', {
+	    	 	direction : 'vertical',
+			    autoplay: 2500,
+			    autoplayDisableOnInteraction: false,
+			    slidesPerView: 1,
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		        loop: true
+			});
+		},500)
+  
+	</script>
+</body>
+</html>

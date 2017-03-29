@@ -1,0 +1,42 @@
+<div class="bord"></div>
+<div class="index_sale_block">
+	<a class="index_title" href="#">
+		<span class="title_left"></span>
+		<span class="more">更多优惠</span>
+	</a>
+	<div class="index_content">
+		<!--遍历部分-->
+		<a href="#" class="index_content_item mixed_content_item" ng-repeat="row in reduce">
+			<img ng-src="{{row.reduceImg}}" alt="#" />
+			<div class="title" ng-bind="row.reduceName">咖啡烘培</div>
+			<div class="price">
+				<ins class="price_current" ng-bind="row.reduceNewprice">
+					25
+				</ins>
+				<ins class="price_down" style="max-width: 75px;" ng-bind="row.reducePrice">新客减30</ins>
+				<!--<del class="price_old">
+					3
+				</del>-->
+			</div>
+		</a>
+		
+		<!--<a href="#" class="index_content_item mixed_content_item">
+			<img src="img/4.png" alt="#" />
+			<div class="title">咖啡烘培</div>
+			<div class="price">
+				<ins class="price_current">
+					25
+				</ins>
+			</div>
+		</a>
+		<a href="#" class="index_content_item mixed_content_item">
+			<img src="img/4.png" alt="#" />
+			<div class="title">咖啡烘培</div>
+			<div class="price">
+				<ins class="price_current">
+					25
+				</ins>
+			</div>
+		</a>-->
+	</div>
+</div>

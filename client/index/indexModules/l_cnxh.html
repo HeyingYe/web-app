@@ -1,0 +1,94 @@
+<div class="bord"></div>
+<div class="index_for_you">
+	<div class="index_like_title">猜你喜欢</div>
+	<div class="index_content">
+		<div>
+			<!--遍历内容-->
+			<a class="standard_content_item" href="#" ng-repeat="shop in shops">
+				<div class="pic">
+					<img ng-src="{{shop.goodsImg}}" alt="#" />
+				</div>
+				<div class="content">
+					<div class="shop_name_main">
+						<div class="shop_name" ng-bind="shop.goodsName"></div>
+					</div>
+					<div class="shop_name_sub" ng-bind="shop.goodsDesciption">
+						
+					</div>
+					<div class="item_price">
+						<div class="price_related">
+							<ins class="price_current" ng-bind="shop.goodsNewprice"></ins>
+							<ins class="price_old" ng-bind="shop.goodsOldprice"></ins>
+						</div>
+						<div class="sale_desc" ng-bind="shop.goodsSale"></div>
+					</div>
+					<div class="rec_reason" ng-bind="shop.goodsFeature"></div>
+				</div>
+			</a>
+			<!--<a class="standard_content_item" href="#">
+				<div class="pic">
+					<img src="img/4.png" alt="#" />
+				</div>
+				<div class="content">
+					<div class="shop_name_main">
+						<div class="shop_name">悦榕庄</div>
+					</div>
+					<div class="shop_name_sub">
+						[3店通用] 8人超值套餐，提供免费WiFi
+					</div>
+					<div class="item_price">
+						<div class="price_related">
+							<ins class="price_current">666</ins>
+							<ins class="price_old">999</ins>
+						</div>
+						<div class="sale_desc">已售6666</div>
+					</div>
+					<div class="rec_reason">广州食蛇圣地</div>
+				</div>
+			</a>
+			<a class="standard_content_item" href="#">
+				<div class="pic">
+					<img src="img/4.png" alt="#" />
+				</div>
+				<div class="content">
+					<div class="shop_name_main">
+						<div class="shop_name">悦榕庄</div>
+					</div>
+					<div class="shop_name_sub">
+						[3店通用] 8人超值套餐，提供免费WiFi
+					</div>
+					<div class="item_price">
+						<div class="price_related">
+							<ins class="price_current">666</ins>
+							<ins class="price_old">999</ins>
+						</div>
+						<div class="sale_desc">已售6666</div>
+					</div>
+					<div class="rec_reason">广州食蛇圣地</div>
+				</div>
+			</a>
+			<a class="standard_content_item" href="#">
+				<div class="pic">
+					<img src="img/4.png" alt="#" />
+				</div>
+				<div class="content">
+					<div class="shop_name_main">
+						<div class="shop_name">悦榕庄</div>
+					</div>
+					<div class="shop_name_sub">
+						[3店通用] 8人超值套餐，提供免费WiFi
+					</div>
+					<div class="item_price">
+						<div class="price_related">
+							<ins class="price_current">666</ins>
+							<ins class="price_old">999</ins>
+						</div>
+						<div class="sale_desc">已售6666</div>
+					</div>
+					<div class="rec_reason">广州食蛇圣地</div>
+				</div>
+			</a>
+			-->
+		</div>
+	</div>
+</div>

@@ -17,6 +17,7 @@ var pool = mysql.createPool({
 	user:"root",
 	password:"",
 	database:"webapp"
+//	database:"teamwork"
 })
 
 module.exports = function(app){
@@ -26,6 +27,46 @@ module.exports = function(app){
 	app.get("/index",function(req,res){
 		//主页
 		console.log("/index")
+		var data = {};
+		pool.getConnection(function(err,connection){
+			var sql = "select * from indexshops";
+			connection.query(sql,function(err,result){
+				data.shops = result;
+//				console.log(result)
+				sql = "select * from indexspecial"
+				connection.query(sql,function(err,result){
+					data.special = result;
+					
+					sql = "select * from indexreduce"
+					connection.query(sql,function(err,result){
+						data.reduce = result;
+						
+						sql = "select * from indexnav where navId limit 0,10"
+						connection.query(sql,function(err,result){
+							data.nav1 = result;
+							
+							sql = "select * from indexnav where navId limit 9,10"
+							connection.query(sql,function(err,result){
+								data.nav2 = result;
+								
+								sql = "select * from indexnav where navId limit 19,10"
+								connection.query(sql,function(err,result){
+									data.nav3 = result;
+									
+									sql = "select * from indexremark"
+									connection.query(sql,function(err,result){
+										data.remark = result;
+										
+										res.send(data);
+										connection.release();
+									})
+								})
+							})
+						})
+					})
+				})
+			})
+		})
 	})
 
 	app.get("/theatreList",function(req,res){

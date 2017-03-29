@@ -25,7 +25,7 @@ module.exports = function(app){
 
 	app.get("/index",function(req,res){
 		//主页
-		console.log("/index")
+		console.log("/index");
 	})
 
 	app.get("/theatreList",function(req,res){
@@ -48,6 +48,11 @@ module.exports = function(app){
 					//电影列表
 					data.movielist = result;
 					sql = "select * from " + result[0].todaytime;
+					// sql1_today = "select * from " + result[0].todaytime;
+					// sql1_food = "select * from " + result[0].food;
+					// sql1_tomorrow = "select * from " + result[0].tomorrowtime;
+					// sql2_today = "select * from " + result[1].todaytime;
+					// sql2_tomorrow = "select * from " + result[1].tomorrowtime;
 					connection.query(sql,function(err,result){
 						//电影今天的场次
 						data.time = result;
@@ -57,6 +62,7 @@ module.exports = function(app){
 							//电影明天的场次
 							sql = "select * from tomorrow1";
 							connection.query(sql,function(err,result){
+								sql = "select * from tomorrow1";
 								data.tomorrow = result;
 								//发送数据
 								res.send(data);

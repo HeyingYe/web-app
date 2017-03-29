@@ -35,7 +35,7 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 		// console.log(res)
 		$scope.movielist = res.movielist;//电影列表
 		$scope.theatre = res.theatre;//影院
-		$scope.time = res.time;//上映时间今天
+		$scope.time = res.time;//上映时间:今天
 		$scope.food = res.food;//食物
 		$scope.toTime = res.tomorrow;//明天
 		var date = new Date();
@@ -45,6 +45,7 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 		$scope.tomorrow = tomorrow;
 		$scope.onflimTime = res.time;//默认显示今天上映的场次
 		$scope.num = 0;//电影的序号
+<<<<<<< HEAD
 		console.log($scope.movielist)
 		console.log($scope.theatre)
 		console.log($scope.time)
@@ -90,7 +91,118 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 						$(".moveFilm ul li").removeClass()
 						.eq($(this).index()).addClass("movieActive");
 					}
+=======
+		$scope.movienum = "查看全部" + res.time.length + "个场次";
+		console.log($scope.movielist)//电影列表：
+		console.log($scope.theatre)//影院资料
+		console.log($scope.time)//今天上映场次
+		console.log($scope.food)//美食
+		console.log($scope.toTime)//明天上映场次
+	})
+	$scope.event = {
+		show:function(e){
+			if($(".down")[0]){
+				$("tr").removeClass("flimhidden");
+				$(".down").css({
+					"background":"url(../img/icon/up.png) no-repeat;"
+				});
+				$scope.movienum = "收起";
+				$(".down").removeClass().addClass("up");
+				console.log(11)
+				// $(".common").html("");
+				// $("<span'>收起</span><span class='up'></span>").appendTo(".common");
+				// $(".common").html("<span'>收起</span><span class='up'></span>")
+
+			}else{
+				console.log(22)
+				$("tr").eq(2).nextAll().addClass("flimhidden");
+				$(".last").removeClass("flimhidden");
+				$(".up").css({
+					"background":"url(../img/icon/down.png) no-repeat;"
+>>>>>>> d3f9149d70cf25f680378e10167a616b054c7660
 				})
+				$(".up").removeClass().addClass("down");
+				$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
+				// $(".common").html("");
+				// $("<span>查看全部</span><span ng-bind='onflimTime.length'></span>个场次<span class='down'></span>").appendTo(".common");
+				// $(".common").html("<span>查看全部</span><span ng-bind='onflimTime.length'></span>个场次<span class='down'></span>")
+			}
+			// console.log($(".show").css("opacity"))
+			// if($(".show").css("display") == "block"){
+			// 	$(".show").css({
+			// 		display:"none",
+			// 	});
+			// 	$("tr").removeClass("flimhidden");
+			// 	$(".hide").css({
+			// 		display:"block"
+			// 	})
+
+			// }else{
+			// 	$(".show").css({
+			// 		display:"block"
+			// 	});
+			// 	$("tr").eq(2).nextAll().addClass("flimhidden");
+			// 	$(".last").removeClass("flimhidden");
+			// 	$(".hide").css({
+			// 		display:"none"
+			// 	})
+			// }
+		},
+		choose:function(e){
+			//事件重复绑定
+			// touch.on(".movie ul li","tap",function(ev){
+			// 	ev.preventDefault();
+			// 	// console.log(li)
+			// 	$scope.num = $(this).closest("li").index();
+			// 	$(".movie ul li").removeClass("active")
+			// 	.eq($scope.num).addClass("active");
+			// })
+			// touch.off(".movie ul li","tap");
+			// console.log($(e.target).closest("li").index())
+			$scope.num = $(e.target).closest("li").index();
+			$(".movie ul li").removeClass("active")
+				.eq($scope.num).addClass("active");
+		},
+		chooseday:function(e){
+			// console.log(e)//事件重复绑定
+			// touch.on(".moveFilm ul li","tap",function(ev){
+			// 	ev.preventDefault();
+			// 	console.log($(this).index())
+			// 	if($(this).index() == 0){
+			// 		$scope.onflimTime = $scope.time;//today
+			// 		$(".moveFilm ul li").removeClass()
+			// 		.eq(0).addClass("movieActive");
+			// 	}else if($(this).index() == 1){
+			// 		$scope.onflimTime = $scope.toTime;//tomorrow
+			// 		$(".moveFilm ul li").removeClass()
+			// 		.eq($(this).index()).addClass("movieActive");
+			// 	}
+			// })
+			// touch.off(".moveFilm ul li","tap");
+			console.log($(e.target).index())//obj
+			$("tr").eq(2).nextAll().addClass("flimhidden");
+			$(".last").removeClass("flimhidden");
+			$(".up").css({
+				"background":"url(../img/icon/down.png) no-repeat;"
+			})
+			$(".up").removeClass().addClass("down");
+			
+			if($(e.target).index() == 0){
+				console.log(2)
+				$scope.onflimTime = $scope.time;//today
+				$(".moveFilm ul li").removeClass()
+				.eq(0).addClass("movieActive");
+				$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
+			}else if($(e.target).index() == 1){
+				$scope.onflimTime = $scope.toTime;//tomorrow
+				$scope.movienum = "查看全部" + $scope.onflimTime.length + "个场次";
+				$(".moveFilm ul li").removeClass()
+				.eq($(e.target).index()).addClass("movieActive");
 			}
 		}
+<<<<<<< HEAD
 }])
+=======
+	}	
+}])
+>>>>>>> d3f9149d70cf25f680378e10167a616b054c7660

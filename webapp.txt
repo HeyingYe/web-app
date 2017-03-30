@@ -69,3 +69,14 @@ webpack
 //gulp 
 
 }
+
+
+git 出现的问题:
+fatal: The remote end hung up unexpectedly
+
+解决方法
+1.git remote rm origin  //移除远程库地址
+2. git remote add origin git@github.com:HeyingYe/web-app.git //重新添加为git方法上传的远程库
+3.git push --set-upstream origin master -f  //建立联系，强制上传
+
+

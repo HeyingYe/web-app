@@ -166,6 +166,17 @@ indexApp.controller('indexController',['$scope','$http','baseUrl',function($scop
 		})
 	}
 	
+//	$scope.setTimeLoad = function(){
+		$(window).scroll(function(){
+			var viewHeight = $(this).height();
+			var contentHeight = $(document).height();
+			var sTop = $(this).scrollTop();
+//			console.log(viewHeight)
+//			console.log(contentHeight)
+//			console.log(sTop)
+		})
+//	}
+	
 //$scope.init = function(){
 //	setTimeout(function(){
 //		var swiper = new Swiper('.swiper-container', {

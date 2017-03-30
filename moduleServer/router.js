@@ -25,7 +25,6 @@ module.exports = function(app){
 
 	app.get("/index",function(req,res){
 		//主页
-
 		console.log("/index")
 		var data = {};
 		pool.getConnection(function(err,connection){

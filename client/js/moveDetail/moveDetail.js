@@ -109,3 +109,6 @@ $(document).on('click','.swiper-container img',function(){
     $('#shodow1').hide();
     $('.swiper-container').hide();
 })
+$(document).on('click','.return',function(){
+    history.back();
+})

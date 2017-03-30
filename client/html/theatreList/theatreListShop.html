@@ -1,0 +1,65 @@
+ <div class="list_nav clear" ng-click="choose()">
+        	<div class="fix_nav">
+	        	<a href="#" class="item">全部地区
+	        		<i class="drop"></i>
+	        	</a>
+	        	<a href="#" class="item">默认排序
+	        		<i class="drop"></i>
+	        	</a>
+	        	<a href="#" class="item">筛选
+	        		<i class="drop"></i>
+	        	</a>
+        	</div>
+        	<div class="details_menu" style="display:none">
+        		<ul class="region_menu menu"> 
+                   <li><a href="#" class="item">全部地区（146）</a></li>
+                   <li><a href="#" class="item">番禺区（23）</a></li>
+                   <li><a href="#" class="item">天河区（29）</a></li>
+                   <li><a href="#" class="item">荔湾区（14）</a></li>
+                   <li><a href="#" class="item">海珠区（12）</a></li>
+                   <li><a href="#" class="item">越秀区（11）</a></li>
+                   <li><a href="#" class="item">增城区（8）</a></li>
+                   <li><a href="#" class="item">花都区（9）</a></li>
+                   <li><a href="#" class="item">萝岗区（5）</a></li>
+                   <li><a href="#" class="item">从化区（4）</a></li>
+        		</ul>
+        	</div>
+        	<div class="details_menu" style="display:none">
+        		<ul class="sort_menu menu">
+        		   <li><a href="#" class="item">默认排序</a></li>
+                   <li><a href="#" class="item">距离最近</a></li>
+                   <li><a href="#" class="item">人气最高</a></li>
+                   <li><a href="#" class="item">评价最高</a></li>
+        		</ul>
+        	</div>
+            <div class="details_menu" style="display:none">
+        		<ul class="filter_menu menu">
+        		   <li><a href="#" class="item">全部影院</a></li>
+                   <li><a href="#" class="item">团购</a></li>
+                   <li><a href="#" class="item">选座</a></li>
+                   <li><a href="#" class="item">有IMAX厅</a></li>
+        		</ul>
+        	</div>
+ </div>
+        <div class="shop_list" id="shop_list">
+        	<a href="http://10.3.135.48:8080/theatreDetail/theatreDetail.html?theatreId={{key}}" class="item" ng-repeat="(key,value) in theatre">
+        		<div class="content">
+        			<h3>
+        				<div class="title" ng-bind="theatre[key].theatreName">五一影城</div>
+        				<span class="mark_seat">座</span>
+        			</h3>
+        			<div class="intro clear">
+        				<div class="movie_info">
+        					<span class="up_price">
+        						<span>￥</span>
+        						<span class="price" ng-bind="theatre[key].price"></span>
+        						起</span> 
+        				</div>
+        				<div class="dis_info">
+        					<span class="add" ng-bind="theatre[key].address">客村/赤岗</span>
+        					<span class="dis">1.7km</span>
+        				</div>
+        			</div>
+        		</div>
+        	</a>
+        </div>

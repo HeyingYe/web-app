@@ -1,0 +1,15 @@
+/*流行电影*/
+.movie_popular{position: relative;width: 100%;height: 11.875rem;/*margin: 0 auto;*/background: url(../img/movie-bg.png) repeat-x center;overflow: hidden;z-index: 400;}
+.movie_popular .swiper-container {width: 100%;height: 100%;margin: 0 auto;overflow: hidden;}
+.movie_popular .swiper-wrapper{position: absolute;left: 0.9375rem;top: 0.3125rem;z-index: 1;height: 10.0rem;width: 100%;transform: translate3d(0px, 0px, 0px);}
+.movie_popular .wrapper .scroller .swiper-slide {display: inline-block;position: relative;width: 5.0rem !important;margin-right: 0.3125rem !important;height: 100%;float: left;z-index: 10;}
+.movie_popular .wrapper .scroller .swiper-slide img{width: 5.0rem;height: 7.5rem;margin: 0.625rem auto;}
+.movie_popular .wrapper .scroller .swiper-slide .tittle{margin-top: -0.625rem;font-size: 0.8125rem;color: #fff;width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.movie_popular .wrapper .scroller .swiper-slide .score{font-size: 0.75rem;color: #ff8400;}
+.movie_popular .wrapper .scroller .swiper-slide .tag{position: absolute;top: 0.625rem;left: 0;}
+.movie_popular .wrapper .scroller .swiper-slide .tag .type_tag{display: block;width: 2.0625rem;height: 0.8125rem;background: url(../img/tag.png) no-repeat 0 0;background-size: auto 6.25rem;    margin-bottom: 0.125rem;}
+.movie_popular .wrapper .scroller .swiper-slide .tag .type_tag.new {background-position: 0 -4.0625rem;}
+.movie_popular .wrapper .scroller .swiper-slide .tag .type-tag.imaxThreeD {background-position: 0 -2.4375rem;width: 3.625rem;}
+.movie_popular .wrapper .scroller .swiper-slide .tag .type-tag.pre {background-position: 0 -3.25rem;}
+.movie_popular .wrapper .scroller .swiper-slide .tag .type-tag.threeD {background-position: 0 0;}
+.movie_popular .wrapper .scroller .swiper-slide .tag .type-tag.imax {background-position: 0 -26px;width: 40px;}

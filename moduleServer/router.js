@@ -69,6 +69,26 @@ module.exports = function(app){
 	})
 
 	app.get("/theatreList",function(req,res){
+		var data ={};
+		pool.getConnection(function(err,connection){
+			var sql = "select * from thearelist";
+			connection.query(sql,function(err,result){
+				data.theatre =result;
+	
+				sql = "select * from " + result[0].gid;
+		
+			connection.query(sql,function(err,result){
+					//电影列表
+					data.movielist = result;
+			
+					//发送数据
+					res.send(data);
+				  //连接不再使用，返回到连接池
+					connection.release();
+		   })
+         })
+		
+	  })
 		//影院列表
 	})
 
@@ -82,7 +102,6 @@ module.exports = function(app){
 			connection.query(sql,function(err,result){
 				// 影院资料
 				data.theatre = result;
-				// console.log(result);
 				sql = "select * from " + result[0].gid;
 				connection.query(sql,function(err,result){
 					//电影列表
@@ -108,16 +127,43 @@ module.exports = function(app){
 								res.send(data);
 								//连接不再使用，返回到连接池
 								connection.release();
-							})
+							})							
+						})
+						
 						})
 					})
 				})
 			})
 		})
-	})
+	
 
 	app.get("/moveDetail",function(req,res){
 		//电影详情
+		//使用连接池
+		var data = {};//返回的数据
+		pool.getConnection(function(err,connection){
+			var sql = "select * from movie";
+			//使用连接
+			connection.query(sql,function(err,result){
+				// 电影信息
+				data.movie = result;
+				sql = "select * from detail ";
+				connection.query(sql,function(err,result){
+					//电影简介
+					data.detail = result;
+					sql = "select * from  evaluate";
+					connection.query(sql,function(err,result){
+						//电影评论
+						data.evaluate = result;
+						
+						//发送数据
+						res.send(data);
+						//连接不再使用，返回到连接池
+						connection.release();
+					})
+				})
+			})
+		})
 	})
 
 	app.get("/seat",function(req,res){
@@ -174,6 +220,9 @@ module.exports = function(app){
 		// 			//关闭数据库连接
 		// 			mysqlHandle.close(connection);
 		// 		})
+				
+		// 	})
+		// });
 
 		// 	})
 		// });

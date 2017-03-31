@@ -1,4 +1,4 @@
-1.先新建数据库webapp
+1.先执行web-app\mysqlData\database.sql新建数据库webapp
 2.执行mysqlData文件夹的sql文件导入
 3.web-app\client\js\common\global.js 的baseUrl为本机ip地址
 4.npm install 安装模块

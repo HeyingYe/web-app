@@ -1,0 +1,4 @@
+1.先新建数据库webapp
+2.执行mysqlData文件夹的sql文件导入
+3.web-app\client\js\common\global.js 的baseUrl为本机ip地址
+4.执行Server.js，开启服务器

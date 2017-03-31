@@ -40,6 +40,7 @@ movieDetail.directive("foot",function(){
 	}
 })
 movieDetail.controller("mDetail",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
+    $scope.baseUrl = baseUrl;
     $http.get(baseUrl + "/moveDetail").success(function(res){
         //?movieId=1
         var str = location.search;

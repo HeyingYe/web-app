@@ -31,6 +31,7 @@ theatreDetail.directive("foot",function(){
 })
 theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
 	// console.log(baseUrl + "/theatreDetail")
+	$scope.baseUrl = baseUrl;
 	$http.get(baseUrl + "/theatreDetail").success(function(res){
 		// console.log(res)
 		$scope.movielist = res.movielist;//电影列表

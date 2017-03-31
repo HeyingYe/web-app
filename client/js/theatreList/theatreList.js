@@ -34,6 +34,7 @@ theatreListDetail.directive("shop",function(){
 })
 
 theatreListDetail.controller("moveController",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
+	$scope.baseUrl = baseUrl;
 	$http.get(baseUrl + "/theatreList").success(function(res){
 		// console.log(res)
 		$scope.movielist = res.movielist;

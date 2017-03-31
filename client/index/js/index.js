@@ -138,6 +138,7 @@ indexApp.directive('searchContainer',function(){
 //-----------------------------
 indexApp.controller('indexController',['$scope','$http','baseUrl',function($scope,$http,baseUrl){
 	console.log(baseUrl + '/index')
+	$scope.baseUrl = baseUrl;
 	$http.get(baseUrl + '/index').success(function(res){
 		$scope.shops = res.shops;
 		$scope.special = res.special;

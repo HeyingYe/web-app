@@ -15,7 +15,7 @@
 			<div class="movieTitle">
 				<h3 ng-bind="movielist[num].name"><span class="score" ng-bind="movielist[num].score"></span></h3>
 				<p>片长：<span class="showtime" ng-bind="movielist[num].time"></span>分钟</p>
-				<a ng-href="http://10.3.135.48:8080/moveDetail/html/moveDetail.html?movieId={{num}}" class="movieDetail">影片详情<span>></span></a>
+				<a ng-href="{{baseUrl}}/moveDetail/html/moveDetail.html?movieId={{num}}" class="movieDetail">影片详情<span>></span></a>
 			</div>
 			<div class="warning">温馨提示：电影开场前5分钟关闭在线售票</div>
 		</div>
@@ -39,7 +39,7 @@
 					<div class="nowsprice" ng-bind="onflimTime[$index].price" ></div>
 				</td>
 				<td width="30%">
-					<a ng-href="http://10.3.135.48:8080/seat/seat.html?seat=seat{{$index + 1}}" class="buy">购票</a>
+					<a ng-href="{{baseUrl}}/seat/seat.html?seat=seat{{$index + 1}}" class="buy">购票</a>
 				</td>
 			</tr>
 			

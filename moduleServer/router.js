@@ -25,14 +25,13 @@ module.exports = function(app){
 
 	app.get("/index",function(req,res){
 		//主页
-		console.log("/index")
 		var data = {};
 		pool.getConnection(function(err,connection){
 			var sql = "select * from indexshops";
 			connection.query(sql,function(err,result){
 				data.shops = result;
-//				console.log(result)
-				sql = "select * from indexspecial"
+				//console.log(result)
+				sql = "select * from indexspecial";
 				connection.query(sql,function(err,result){
 					data.special = result;
 					
@@ -77,7 +76,7 @@ module.exports = function(app){
 	
 				sql = "select * from " + result[0].gid;
 		
-			connection.query(sql,function(err,result){
+				connection.query(sql,function(err,result){
 					//电影列表
 					data.movielist = result;
 			
@@ -85,7 +84,7 @@ module.exports = function(app){
 					res.send(data);
 				  //连接不再使用，返回到连接池
 					connection.release();
-		   })
+			   })
          })
 		
 	  })
@@ -107,11 +106,6 @@ module.exports = function(app){
 					//电影列表
 					data.movielist = result;
 					sql = "select * from " + result[0].todaytime;
-					// sql1_today = "select * from " + result[0].todaytime;
-					// sql1_food = "select * from " + result[0].food;
-					// sql1_tomorrow = "select * from " + result[0].tomorrowtime;
-					// sql2_today = "select * from " + result[1].todaytime;
-					// sql2_tomorrow = "select * from " + result[1].tomorrowtime;
 					connection.query(sql,function(err,result){
 						//电影今天的场次
 						data.time = result;
@@ -130,11 +124,11 @@ module.exports = function(app){
 							})							
 						})
 						
-						})
 					})
 				})
 			})
 		})
+	})
 	
 
 	app.get("/moveDetail",function(req,res){
@@ -168,16 +162,29 @@ module.exports = function(app){
 
 	app.get("/seat",function(req,res){
 		//选座
+		
 		var address = (req.headers.referer.split("?"))[1];
-		console.log(address)
+		// console.log(address)
 		var search = (address.split("="))[1];
-		console.log(search)
+		// console.log(search)
 		var data = {};
 		pool.getConnection(function(err,connection){
 			var sql = "select * from " + search;
 			connection.query(sql,function(err,result){
 				data.seat = result;
 				data = result[0];
+				res.send(data);
+				connection.release();
+			})
+		})
+	})
+
+	app.get("/userMsg",function(req,res){
+		var data = {};
+		pool.getConnection(function(err,connection){
+			var sql = "select * from message";
+			connection.query(sql,function(err,result){
+				data.goods = result;
 				res.send(data);
 				connection.release();
 			})

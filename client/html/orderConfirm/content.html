@@ -1,4 +1,4 @@
-<div class="orderTime">请在15分00秒内完成支付,超时将取消订单</div>
+<div class="orderTime">请在<span id="timeCount" ng-bind="timeCount" ng-click="event.timeout()"></span>内完成支付,超时将取消订单</div>
 <div class="InfoDetail">
   <div class="movieInfo">
     <h3 class="movieName">盗梦空间</h3>

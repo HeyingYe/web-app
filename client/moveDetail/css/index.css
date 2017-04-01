@@ -283,6 +283,7 @@ body{
     border-bottom: 1px solid #f0f0f0;
 }
 .flex-box{
+    padding: 15px 0;
     display: flex;
     justify-content:flex-start;
     height: auto;
@@ -291,9 +292,9 @@ body{
 .evaluate-list{
     padding: 0 15px;
 }
-.evaluate-list a{
-    padding: 15px 0;
-}
+// .evaluate-list a{
+//     padding: 15px 0;
+// }
 .head-sculpture{
     margin-right: 10px;
     position: relative;
@@ -303,6 +304,7 @@ body{
     background: url(../../moveDetail/img/homepage.png) no-repeat;
     background-size: 254px auto;
     top: 31px;
+    left: 0;
     width: 20px;
     height: 20px;
     background-position: -3px 0px;

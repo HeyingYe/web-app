@@ -1,0 +1,7 @@
+1.先执行web-app\mysqlData\database.sql新建数据库webapp
+2.执行mysqlData文件夹中所有文件夹的sql文件全部导入
+3.web-app\client\js\common\global.js 的baseUrl为本机ip地址
+4.npm install 安装模块
+5.执行Server.js，开启服务器
+6.访问地址:本地ip地址 + /index/index1.html
+7.index-猫眼电影----每个电影或影院的前两个可以点击，不同的数据

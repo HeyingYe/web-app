@@ -200,5 +200,5 @@ indexApp.controller('indexController',['$scope','$http','baseUrl',function($scop
 		$scope.parameter = "广州";
 	}
 	
-	
+
 }]);

@@ -31,6 +31,7 @@ theatreDetail.directive("foot",function(){
 })
 theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$http,baseUrl){
 	// console.log(baseUrl + "/theatreDetail")
+	$scope.baseUrl = baseUrl;
 	$http.get(baseUrl + "/theatreDetail").success(function(res){
 		// console.log(res)
 		$scope.movielist = res.movielist;//电影列表
@@ -40,7 +41,8 @@ theatreDetail.controller("tDetail",["$scope","$http","baseUrl",function($scope,$
 		$scope.toTime = res.tomorrow;//明天
 		var date = new Date();
 		var today = date.getMonth() + 1 + "月" + date.getDate() + "日(今天)";
-		var tomorrow = date.getMonth() + 1 + "月" + (date.getDate() + 1) + "日(明天)";
+		date.setDate(date.getDate() + 1);
+		var tomorrow = date.getMonth() + 1 + "月" + date.getDate() + "日(明天)";
 		$scope.today = today;
 		$scope.tomorrow = tomorrow;
 		$scope.onflimTime = res.time;//默认显示今天上映的场次

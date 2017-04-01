@@ -103,7 +103,8 @@ foot{
 	height: 78px !important;
 }
 .movie .active{
-	border: solid 2px #ff8000;
+	border: solid 2px rgb(3,145,230)
+;
 }
 // .swiper-container ul li{
 // 	margin-right:10px;
@@ -176,8 +177,9 @@ foot{
     margin-top: 5px;
 }
 .movieActive{
-	color: #f63;
-    border-bottom: 2px solid #f63;
+	color: rgb(3,145,230);
+    border-bottom: 2px solid rgb(3,145,230)
+;
     font-weight: 700;
 }
 .moveFilm ul{
@@ -218,12 +220,12 @@ table{
 	color:#999;
 }
 .moveFilm table tr td .nowsprice{
-	color: #f63;
+	color: rgb(3,145,230);
     text-align: right
 }
 .moveFilm table tr td .buy{
 	color: #fff;
-    background: #f63;
+    background: rgb(3,145,230);
     padding: 0 20px;
     text-align: center;
     border-radius: 3px;

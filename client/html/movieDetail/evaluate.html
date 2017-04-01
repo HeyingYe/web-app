@@ -5,7 +5,7 @@
     </div>
     <!-- 评价列表 -->
     <div class="evaluate-list">
-        <a href="" class="flex-box" ng-repeat="x in data.evaluate" ng-if="x.movieId == num">
+        <div class="flex-box" ng-repeat="x in data.evaluate" ng-if="x.movieId == num">
             <div class="head-sculpture">
                 <img ng-src="{{x.src[0]}}" alt="">
                 <span></span>
@@ -30,7 +30,7 @@
                     </span>
                 </p>
             </div>
-        </a>
+        </div>
         <!-- 阴影 -->
         <!-- <div class="shodow hide" id="shodow1">
         </div>

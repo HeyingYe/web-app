@@ -1,0 +1,28 @@
+<div class="waimai-food-item" ng-repeat="food in specialty">
+	<a href="#">
+		<div class="item-wrapper">
+			<!--主要内容区域-->
+			<div class="main-content-box">
+				<!--名称-->
+				<div class="poi-name">
+	                <span ng-bind="food.foodShop">味食猫便当（同和总店）</span>
+	           </div>
+				<!--图片-->
+				<div class="food-image" style="background-image: url({{food.foodImg}});"></div>
+				<!--菜品名称-->
+				<div class="food-name" ng-bind="food.foodName">沙拉脆皮鸡+烤肉饭</div>
+				<!--折扣  已售-->
+				<div class="discount-soldnum">
+	                <span class="discount" ng-bind="food.foodDiscount">3.6折</span>
+	                <span class="sold-num" ng-bind="food.foodSale">月售:1355份</span>
+				</div>
+				<!--价格 抢购-->
+				<div class="price-buybtn">
+	                <span class="price" ng-bind="food.foodPrice">￥11</span>
+	                <span class="buy-btn" >抢购</span>
+	            </div>
+	            <div class="cb"></div>
+			</div>
+		</div>
+	</a>
+</div>

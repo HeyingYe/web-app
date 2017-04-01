@@ -177,23 +177,28 @@ indexApp.controller('indexController',['$scope','$http','baseUrl',function($scop
 		})
 //	}
 	
-//$scope.init = function(){
-//	setTimeout(function(){
-//		var swiper = new Swiper('.swiper-container', {
-//	        pagination: '.swiper-pagination',
-//	        paginationClickable: true
-//  	});
-//  	var swiper = new Swiper('.swiper-fixedWindow', {
-//  	 	direction : 'vertical',
-//		    autoplay: 2500,
-//		    autoplayDisableOnInteraction: false,
-//		    slidesPerView: 1,
-//	        paginationClickable: true,
-//	        spaceBetween: 30,
-//	        loop: true
-//		});
-//	},500)
-//}
-//
-//$scope.init();
+	setTimeout(function(){
+		var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true
+    	});
+    	var swiper = new Swiper('.swiper-fixedWindow', {
+    	 	direction : 'vertical',
+		    autoplay: 2500,
+		    autoplayDisableOnInteraction: false,
+		    slidesPerView: 1,
+	        paginationClickable: true,
+	        spaceBetween: 30,
+	        loop: true
+		});
+	},500)
+	
+	if( window.location.href.split('?')[1]){
+		$scope.parameter = decodeURIComponent( window.location.href.split('?')[1].split('=')[1] );
+		console.log($scope.parameter)
+	}else{
+		$scope.parameter = "广州";
+	}
+	
+	
 }]);

@@ -21,13 +21,36 @@ a{
 	clear: both;
 }
 
+/*字体颜色*/
+.price_current,.price_down,.rec_reason,
+.btn-openapp{
+	color: rgb(3,145,230);
+}
+
+/*背景颜色*/
+.index-head,
+.l_nav .swiper-pagination-bullet-active,
+.btn-downloadapp{
+	background-color: rgb(3,145,230);
+}
+
+/*边框颜色*/
+.price_down, .btns a{
+	border-color: rgb(3,145,230);
+}
+
+/*描述的背景颜色*/
+.rec_reason{
+	background-color: skyblue;
+}
+
 /*头部*/
 .index-head {
     position: fixed;
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background-color: #f63;
+    /*background-color: #f63;*/
     color: #fff;
     padding: 0 10px;
     text-align: center;
@@ -123,8 +146,68 @@ a{
 
 /*download*/
 .l_download{
-	height: 170px;
+	height: 120px;
+	background-image: url(../img/downloadbackground.png);
 }
+
+.l_download, .l_download .download-guide .title .icon, .download-banner-top .close, .download-banner-top .main .logo {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.l_download .download-guide {
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.l_download .download-guide .title {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 24px 0 14px;
+    height: 30px;
+}
+
+.l_download .download-guide .title .text {
+    font-size: 20px;
+    color: #111;
+    font-weight: bolder;
+}
+
+.l_download .download-guide .btns, .l_download .download-guide .btns a {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.l_download .download-guide .btns a {
+    height: 40px;
+    width: 126px;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 2px;
+    /*border: 1px solid #f63;*/
+    border: 1px solid;
+}
+
+.l_download .download-guide .btns .btn-openapp {
+    /*color: #f63;*/
+    margin-right: 15px;
+}
+
+.l_download .download-guide .btns .btn-downloadapp {
+    color: #fff;
+    /*background-color: #f63;*/
+}
+
 .l_download img{
 	width: 100%;
 	height: 120px;
@@ -145,7 +228,7 @@ a{
 }
 
 .l_nav .swiper-pagination-bullet-active {
-    background: #f5734b;
+    /*background: #f5734b;*/
 }
 
 .l_nav .page{
@@ -271,9 +354,22 @@ a{
 	border-bottom: 1px solid #e1e1e1;
 }
 
-.l_wm .index_wm img{
+/*.l_wm .index_wm a{
 	width: 100%;
+}*/
+
+.l_wm .index_wm a:first-child{
+	width: 52%;
 	height: 75px;
+}
+
+.l_wm .index_wm a:last-child{
+	width: 48%;
+	height: 75px;
+}
+
+.l_wm .index_wm a img{
+	width: 100%;
 }
 
 /*有颜就有钱*/
@@ -295,6 +391,9 @@ a{
 /*超值特惠*/
 .title{
 	color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .l_czth .index_sale_block{
@@ -358,7 +457,7 @@ a{
 }
 
 .l_czth .index_sale_block .index_content .mixed_content_item .price .price_current {
-    color: #f63;
+    /*color: #f63;*/
     text-decoration: none;
     font-size: 20px;
 }
@@ -441,7 +540,7 @@ a{
 }
 
 .l_ttlj .index_sale_block .index_content .mixed_content_item .price .price_current {
-    color: #f63;
+    /*color: #f63;*/
     text-decoration: none;
     font-size: 20px;
 }
@@ -464,10 +563,11 @@ a{
 .l_ttlj .index_sale_block .index_content .mixed_content_item .price .price_down {
     padding: 1px 6px 1px 3px;
     border-radius: 2px;
-    color: #f63;
+    /*color: #f63;*/
     text-decoration: none;
     font-size: 12px;
-    border: 1px solid #ff9470;
+    /*border: 1px solid #ff9470;*/
+    border: 1px solid ;
     position: absolute;
     top: 4px;
     max-width: 50px;
@@ -566,7 +666,7 @@ a{
 }
 
 .l_cnxh .index_for_you .index_content .standard_content_item .content .item_price .price_related .price_current {
-    color: #f63;
+    /*color: #f63;*/
     font-size: 21px;
     text-decoration: none;
     font-weight: 700;
@@ -605,8 +705,8 @@ a{
     font-size: 12px;
     -webkit-transform: scale(.95);
     transform: scale(.95);
-    color: #f63;
-    background-color: #ffefea;
+    /*color: #f63;*/
+    /*background-color: #ffefea;*/
     float: left;
     padding: 2px 8px;
     overflow: hidden;

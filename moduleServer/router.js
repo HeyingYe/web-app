@@ -67,6 +67,19 @@ module.exports = function(app){
 			})
 		})
 	})
+	
+	app.get("/specialty",function(req, res){
+		var data = {};
+		pool.getConnection(function(err, connection){
+			var sql = "select * from specialtyfood";
+			connection.query(sql, function(err, result){
+				data.specialty = result;
+				//发送数据
+				res.send(data);
+				connection.release();
+			})
+		})
+	})
 
 	app.get("/theatreList",function(req,res){
 		var data ={};

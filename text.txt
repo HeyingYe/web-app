@@ -4,4 +4,4 @@
 4.npm install 安装模块
 5.执行Server.js，开启服务器
 6.访问地址:本地ip地址 + /index/index1.html
-7.index-猫眼电影----
+7.index-猫眼电影----每个电影或影院的前两个可以点击，不同的数据

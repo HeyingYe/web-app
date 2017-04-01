@@ -23,6 +23,10 @@ module.exports = function(app){
 	//静态资源路由
 	app.use(express.static(path.join(__dirname,"../client/")));
 
+    app.use(bodyParser.urlencoded({extended:false}));
+
+    app.use(bodyParser.json());
+
 	app.get("/index",function(req,res){
 		//主页
 		var data = {};
@@ -159,6 +163,63 @@ module.exports = function(app){
 			})
 		})
 	})
+
+    app.get("/login", function(req, res) {
+        //登录
+        //使用连接池
+        var data = {}; //返回的数据
+        pool.getConnection(function(err, connection) {
+            var sql = "select * from users"
+            connection.query(sql, function(err, result) {
+                data.users = result;
+                //发送数据
+                res.send(data);
+                //连接不再使用，返回到连接池
+                connection.release();
+            })
+        })
+    })
+
+    app.post("/reg", function(req, res) {
+        //注册
+        //console.log(req)
+        console.log(req.body)
+        console.log(req.body.userName)
+
+        //return
+        //使用连接池
+        var data = {}; //返回的数据
+        
+        pool.getConnection(function(err, connection) {
+            var sql = "select * from users"
+            connection.query(sql, function(err, result) {
+                data.users = result;
+                console.log(data.users);
+                for (var i = 0; i < data.users.length; i++) {
+                    if (data.users[i].name == req.body.userName) {
+                        res.send('帐号已注册');
+                    } else if (data.users[i].name != req.body.userName && i == data.users.length - 1) {
+                        var sql = "INSERT INTO  `users` ( `name` ,  `psw` ,  `email` ) VALUES ( '"+req.body.userName+"', '"+req.body.passWord+"',  '"+req.body.email+"')";
+                        connection.query(sql,function(err,result){
+                            if(err){
+                              console.log('{err: 1, msg: "数据库出错"}');
+                              res.end();
+                          }
+                          else{
+                              console.log('{err: 0, msg: "注册成功"}');
+                              res.end();
+                          }
+                        })
+                    }
+                }
+                //发送数据
+                res.send(data);
+                //console.log(666)
+                //连接不再使用，返回到连接池
+                connection.release();
+            })
+        })
+    })
 
 	app.get("/seat",function(req,res){
 		//选座

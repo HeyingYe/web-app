@@ -1,0 +1,7 @@
+/*hostcity*/
+.city_title{padding-left: 0.625rem;font-size: 0.875rem;color: #323232;line-height: 1.875rem;background-color: #f2f2f2;border-bottom: 0.0625rem solid #e2e2e2;font-weight: 700;display: block;}
+.citylist li{ box-sizing: border-box;float: left; width: 33%;line-height: 48px;border-bottom: 0.0625rem solid #ededed;border-right: 0.0.003906rem solid #ededed;text-align: center;color: #323232;font-size: 1.0rem; }
+.citylist li:nth-child(3n){border-right: none;}
+.citylist li a{display: block;color: #323232;margin: 0 0.125rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+/*城市筛选列表*/
+.screen ul li{width: 20%!important;float: left;}

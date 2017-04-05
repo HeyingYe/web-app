@@ -264,6 +264,21 @@ module.exports = function(app){
 			})
 		})
 	})
+	app.get("/city",function(req,res){
+		var data ={};
+		pool.getConnection(function(err,connection){
+			var sql = "select * from zg_city";
+			connection.query(sql,function(err,result){
+				data =result;
+			
+					//发送数据
+					res.send(data);
+				  //连接不再使用，返回到连接池
+					connection.release();
+		   })
+         })
+		
+	  })
 }
 
 //配置数据库连接参数
